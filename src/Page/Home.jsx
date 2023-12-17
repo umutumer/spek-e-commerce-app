@@ -1,110 +1,100 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Components/Navbar";
-import {  useDispatch, useSelector } from "react-redux";
+import Navigation from "../Components/Navigation";
+import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../Redux/Action";
+import { Navbar } from "flowbite-react";
+import { setSearchQuery } from "../Redux/SearchSlice";
 
 const Home = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const product = useSelector((state) => state.product);
-  console.log(product);
-  const [selectedCategory, SetSelectedCategory] = useState("Tüm Ürünler");
+  const searchQuery = useSelector((state) => state.search.searchQuery);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("Tüm Ürünler");
+
+  const categories = [
+    "Tüm Ürünler",
+    "Kadın",
+    "Erkek",
+    "AnneCocuk",
+    "EvYasam",
+    "Supermarket",
+    "Kozmetik",
+    "AyakkabiCanta",
+    "Elektronik",
+    "SporOutdoor",
+    "CokSatanlar",
+  ];
 
   const filteredProduct = product.filter((prod) => {
-    if (selectedCategory === "Tüm Ürünler") {
-      return true;
-    } else {
-      return prod.kategori === selectedCategory;
-    }
+    const categoryFilter =
+      selectedCategory === "Tüm Ürünler" || prod.kategori === selectedCategory;
+
+    const searchFilter = prod.urunAdi
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+
+    return searchQuery ? searchFilter : categoryFilter && searchFilter;
   });
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    setIsMenuOpen(false);
+    dispatch(setSearchQuery(""));
+  };
+
   useEffect(() => {
     dispatch(getProduct());
   }, [dispatch]);
+
   return (
-    <div className="w-full flex flex-col">
-      <Navbar />
-      <div className="w-full h-6 flex border-b justify-around bg-white dark:bg-slate-900 dark:border-slate-700">
-        {selectedCategory && selectedCategory !== "Tüm Ürünler" && (
-          <button
-            onClick={() => SetSelectedCategory("Tüm Ürünler")}
-            className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200 text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
+    <div className="w-full flex flex-col relative">
+      <Navigation />
+
+      <div className="w-full flex items-center justify-center border-b bg-white dark:bg-slate-900 dark:border-slate-700 relative">
+        <Navbar className="flex  bg-white dark:bg-slate-900">
+          <Navbar.Toggle
+            className="absolute right-8 -top-12"
+            onClick={handleMenuToggle}
+          />
+          <Navbar.Collapse
+            className={`w-full ${isMenuOpen ? "block" : "hidden"}`}
           >
-            Tüm Ürünler
-          </button>
-        )}
-        <button
-          onClick={() => SetSelectedCategory("Kadın")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200 text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Kadın
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("Erkek")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Erkek
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("AnneCocuk")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Anne & Çocuk
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("EvYasam")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Ev & Yaşam
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("Supermarket")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          SüperMarket
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("Kozmetik")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Kozmetik
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("AyakkabiCanta")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Ayakkabı & Çanta
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("Elektronik")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Elektronik
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("SporOutdoor")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Spor & Outdoor
-        </button>
-        <button
-          onClick={() => SetSelectedCategory("CokSatanlar")}
-          className="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 duration-200  text-black dark:text-white dark:hover:text-blue-600 dark:hover:border-blue-600"
-        >
-          Çok Satanlar
-        </button>
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryClick(category)}
+                className={`hover:text-orange-500 duration-200 text-black dark:text-white dark:hover:text-blue-600 ${
+                  selectedCategory === category ? "text-orange-500 dark:text-blue-600" : ""
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </Navbar.Collapse>
+        </Navbar>
       </div>
-      <div className="w-full flex flex-wrap justify-center bg-white dark:bg-slate-800 dark:text-white">
-        {
-            filteredProduct.map((prod,index) => (
-                <div key={index} className=" w-52 h-96 border bg-white dark:bg-slate-900 dark:border-slate-600 m-5">
-                    <img src={prod.resim} alt="" className=" w-full h-72" />
-                    <p className="m-0.5">{prod.urunAdi}</p>
-                    <p className="m-0.5">{prod.fiyat}₺</p>
-                    <div className="w-full flex justify-center">
-                    <button className="bg-orange-500 text-white w-48 h-7 rounded-xl m-0.5 dark:bg-blue-600">Sepete Ekle</button>
-                    </div>
-                </div>
-            ))
-        }
+
+      <div className="w-full flex flex-wrap justify-center bg-white dark:bg-slate-800 dark:text-white min-h-screen">
+        {filteredProduct.map((prod, index) => (
+          <div
+            key={index}
+            className=" md:w-52 w-40 md:h-96 border bg-white dark:bg-slate-900 dark:border-slate-600 m-5"
+          >
+            <img src={prod.resim} alt="" className=" w-full md:h-72 h-60" />
+            <p className="m-0.5">{prod.urunAdi}</p>
+            <p className="m-0.5">{prod.fiyat}₺</p>
+            <div className="w-full flex justify-center">
+              <button className="bg-orange-500 text-white w-48 h-7 rounded-xl m-0.5 dark:bg-blue-600">
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className="w-full h-screen flex justify-center items-center bg-white dark:bg-slate-900">
       <form className="w-96 h-96 flex flex-col items-center justify-center border border-orange-500 dark:border-blue-600 shadow-lg shadow-orange-400 dark:shadow-blue-600 rounded relative">

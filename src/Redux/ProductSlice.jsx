@@ -16,6 +16,9 @@ const productSlice = createSlice({
         },
         delProduct:(state,action) =>{
             return state.filter((item) => item.id !== action.payload)
+        },
+        setDataField:(state,action) =>{
+            return{...state,[action.field]:action.value}
         }
     }
 })

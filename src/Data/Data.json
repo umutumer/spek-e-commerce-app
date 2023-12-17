@@ -405,6 +405,7 @@
         {
             "id":100,
             "kullaniciAdi":"umutumer",
+            "mail":"utumer6@gmail.com",
             "sifre":"password123",
             "favoriler":[],
             "sepetim":[],

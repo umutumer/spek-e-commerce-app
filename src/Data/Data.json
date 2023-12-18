@@ -1,426 +1,425 @@
 {
-    "product": [
-        {
-            "id": 1,
-            "urunAdi": "Elbise",
-            "fiyat": 150.0,
-            "renk": "Siyah",
-            "kategori": "Kadın",
-            "resim":"https://static.ticimax.cloud/10729/uploads/urunresimleri/buyuk/drape-detay-uzun-kol-midi-kadin-elbise-570c02.jpg"
-        },
-        {
-            "id": 2,
-            "urunAdi": "Çanta",
-            "fiyat": 80.0,
-            "renk": "Beyaz",
-            "kategori": "Kadın",
-            "resim":"https://www.im-polo.com/wp-content/uploads/2022/10/impolo-beti-omuz-beyaz-taba-kadin-canta-788.jpg"
-        },
-        {
-            "id": 3,
-            "urunAdi": "Ayakkabı",
-            "fiyat": 120.0,
-            "renk": "Kırmızı",
-            "kategori": "Kadın",
-            "resim":"https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg"
-        },
-        {
-            "id": 4,
-            "urunAdi": "Gözlük",
-            "fiyat": 50.0,
-            "renk": "Mavi",
-            "kategori": "Kadın",
-            "resim":"https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg"
-        },
-        {
-            "id": 5,
-            "urunAdi": "Şort",
-            "fiyat": 100.0,
-            "renk": "Yeşil",
-            "kategori": "Kadın",
-            "resim":"https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg"
-        },
-        {
-            "id": 6,
-            "urunAdi": "Gömlek",
-            "fiyat": 80.0,
-            "renk": "Mavi",
-            "kategori": "Erkek",
-            "resim":"https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg"
-        },
-        {
-            "id": 7,
-            "urunAdi": "Pantolon",
-            "fiyat": 90.0,
-            "renk": "Siyah",
-            "kategori": "Erkek",
-            "resim":"https://cdn.dsmcdn.com/ty996/product/media/images/prod/SPM/PIM/20230909/20/9c831f8d-668c-3d3b-a2eb-3b9c0680fac5/1_org_zoom.jpg"
-        },
-        {
-            "id": 8,
-            "urunAdi": "Ceket",
-            "fiyat": 120.0,
-            "renk": "Gri",
-            "kategori": "Erkek",
-            "resim":"https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg"
-        },
-        {
-            "id": 9,
-            "urunAdi": "SweatShirt",
-            "fiyat": 30.0,
-            "renk": "Kahverengi",
-            "kategori": "Erkek",
-            "resim":"https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/pim/productimages/20232/6896525/v1/l_20232-w3hs46z8-vc8-92-74-89-188_a.jpg"
-        },
-        {
-            "id": 10,
-            "urunAdi": "Saat",
-            "fiyat": 200.0,
-            "renk": "Metalik Gri",
-            "kategori": "Erkek",
-            "resim":"https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg"
-        },
-        {
-            "id": 11,
-            "urunAdi": "Bebek Body",
-            "fiyat": 25.0,
-            "renk": "Pembe",
-            "kategori": "AnneCocuk",
-            "resim":"https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85,format=auto/13027/uploads/urunresimleri/buyuk/deniz-canlilari-baskili-beyaz-unisex-b-e2379f.jpg"
-        },
-        {
-            "id": 12,
-            "urunAdi": "Anne Bluz",
-            "fiyat": 60.0,
-            "renk": "Beyaz",
-            "kategori": "AnneCocuk",
-            "resim":"https://www.cdnaws.com/i/freshmodacomtr/ZW3D2Lqi2qQZW3D2QvGYHPsSdwLZW3D2/urunler/641afec070292-641afec072dec.jpeg"
-        },
-        {
-            "id": 13,
-            "urunAdi": "Çocuk Ayakkabı",
-            "fiyat": 45.0,
-            "renk": "Mavi",
-            "kategori": "AnneCocuk",
-            "resim":"https://img.slazenger.com.tr/slazenger-kunti-i-sneaker-erkek-cocuk-ayakkabi-beyaz-turuncu-11148-sneaker-230207-11-B.jpg?height=750"
-        },
-        {
-            "id": 14,
-            "urunAdi": "Hamile Pantolon",
-            "fiyat": 70.0,
-            "renk": "Siyah",
-            "kategori": "AnneCocuk",
-            "resim":"https://www.sefamerve.com/image/cache/data/202104/17/sefamerve_pantolon_hubla1019_02_6697891618663536152_1-752x1152.jpg"
-        },
-        {
-            "id": 15,
-            "urunAdi": "Oyuncak Set",
-            "fiyat": 35.0,
-            "renk": "Renkli",
-            "kategori": "AnneCocuk",
-            "resim":"https://cdn.dsmcdn.com/ty971/product/media/images/20230720/13/395217892/127631360/2/2_org_zoom.jpg"
-        },
-        {
-            "id": 16,
-            "urunAdi": "Yastık Seti",
-            "fiyat": 40.0,
-            "renk": "Desenli",
-            "kategori": "EvYasam",
-            "resim":"https://komforthome.com.tr/Resim/Minik/1000x1000_thumb_st02024.jpg"
-        },
-        {
-            "id": 17,
-            "urunAdi": "Mutfak Tencere Seti",
-            "fiyat": 120.0,
-            "renk": "Gümüş",
-            "kategori": "EvYasam",
-            "resim":"https://cdn.karaca.com/image/cdndata/182/202209/600.15.01.2574/8699343501156-4.jpg"
-        },
-        {
-            "id": 18,
-            "urunAdi": "Banyo Havlu Seti",
-            "fiyat": 35.0,
-            "renk": "Beyaz",
-            "kategori": "EvYasam",
-            "resim":"https://n11scdn.akamaized.net/a1/375_535/04/49/79/52/IMG-6759343251717698693.jpg"
-        },
-        {
-            "id": 19,
-            "urunAdi": "Halı",
-            "fiyat": 80.0,
-            "renk": "Kahverengi",
-            "kategori": "EvYasam",
-            "resim":"https://www.festivalhali.com/amara-modern-mavi-oda-halisi-m1102a-amara-festival-hali-m1102a-675-95-B.jpg"
-        },
-        {
-            "id": 20,
-            "urunAdi": "Masa Lambası",
-            "fiyat": 50.0,
-            "renk": "Altın",
-            "kategori": "EvYasam",
-            "resim":"https://cdn.dsmcdn.com/ty826/product/media/images/20230414/16/324686757/853264521/7/7_org_zoom.jpg"
-        },
-        {
-            "id": 21,
-            "urunAdi": "Kahve",
-            "fiyat": 15.0,
-            "marka": "Arabica",
-            "kategori": "Supermarket",
-            "resim":"https://productimages.hepsiburada.net/s/44/375-375/10802033295410.jpg"
-        },
-        {
-            "id": 22,
-            "urunAdi": "Makarna",
-            "fiyat": 5.0,
-            "marka": "Barilla",
-            "kategori": "Supermarket",
-            "resim":"https://static.ticimax.cloud/48857/uploads/urunresimleri/buyuk/1005154-113e2b.jpg"
-        },
-        {
-            "id": 23,
-            "urunAdi": "Cips",
-            "fiyat": 8.0,
-            "marka": "Lays",
-            "kategori": "Supermarket",
-            "resim":"https://ardenmarket.com.tr/media/catalog/product/cache/0b154ba1d9ffbc98998b9163ce10b49b/l/a/lay_s_klasik_patates_cipsi_parti_boy_150_g.jpg"
-        },
-        {
-            "id": 24,
-            "urunAdi": "Tuvalet Kağıdı",
-            "fiyat": 12.0,
-            "marka": "Cottonelle",
-            "kategori": "Supermarket",
-            "resim":"https://m.media-amazon.com/images/I/81RW-JyiJDL.jpg"
-        },
-        {
-            "id": 25,
-            "urunAdi": "Deterjan",
-            "fiyat": 18.0,
-            "marka": "Persil",
-            "kategori": "Supermarket",
-            "resim":"https://m.media-amazon.com/images/I/71B2Z6wwXnL.jpg"
-        },
-        {
-            "id": 26,
-            "urunAdi": "Far Paleti",
-            "fiyat": 40.0,
-            "marka": "Urban Decay",
-            "kategori": "Kozmetik",
-            "resim":"https://cdn03.ciceksepeti.com/cicek/kcm16156600-1/L/ud-model-naked-heat-far-paleti-kcm16156600-1-27fb0d96978542548e904e271c966ea5.jpg"
-        },
-        {
-            "id": 27,
-            "urunAdi": "Parfüm",
-            "fiyat": 70.0,
-            "marka": "Chanel",
-            "kategori": "Kozmetik",
-            "resim":"https://cdn.dsmcdn.com/ty997/product/media/images/prod/SPM/PIM/20230911/05/d20f0cb8-9a72-3aa9-b692-cf8659ba4b74/1_org_zoom.jpg"
-        },
-        {
-            "id": 28,
-            "urunAdi": "Şampuan",
-            "fiyat": 15.0,
-            "marka": "Pantene",
-            "kategori": "Kozmetik",
-            "resim":"https://images.migrosone.com/sanalmarket/product/34255943/34255943-2f9775-1650x1650.jpg"
-        },
-        {
-            "id": 29,
-            "urunAdi": "Ruj",
-            "fiyat": 20.0,
-            "marka": "Maybelline",
-            "kategori": "Kozmetik",
-            "resim":"https://flavus.com/cdn/shop/products/1_org_zoom_6d99ed32-7a82-4790-af4a-b969c8f9fa79_grande.jpg?v=1681941123"
-        },
-        {
-            "id": 30,
-            "urunAdi": "Nemlendirici Krem",
-            "fiyat": 25.0,
-            "marka": "Nivea",
-            "kategori": "Kozmetik",
-            "resim":"https://www.dermoeczanem.com/nivea-soft-nemlendirici-bakim-kremi-75-ml-nivea-117170-47-B.jpg"
-        },
-        {
-            "id": 31,
-            "urunAdi": "Spor Ayakkabı",
-            "fiyat": 100.0,
-            "renk": "Siyah",
-            "kategori": "AyakkabiCanta",
-            "resim":"https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85,format=auto/59755/uploads/urunresimleri/buyuk/kadin-siyah-spor-ayakkabi-dnz-91f7c-.jpg"
-        },
-        {
-            "id": 32,
-            "urunAdi": "Topuklu Ayakkabı",
-            "fiyat": 80.0,
-            "renk": "Bej",
-            "kategori": "AyakkabiCanta",
-            "resim":"https://cdn.dsmcdn.com/ty6/product/media/images/20200716/19/4635552/77107432/1/1_org_zoom.jpg"
-        },
-        {
-            "id": 33,
-            "urunAdi": "Sırt Çantası",
-            "fiyat": 60.0,
-            "renk": "Gri",
-            "kategori": "AyakkabiCanta",
-            "resim":"https://akn-lacoste.a-cdn.akinoncloud.com/products/2022/10/25/192525/ee915d7b-7a43-4db9-82b4-fc631e090b57_size2000x2000_cropCenter.jpg"
-        },
-        {
-            "id": 34,
-            "urunAdi": "Cüzdan",
-            "fiyat": 25.0,
-            "renk": "Bordo",
-            "kategori": "AyakkabiCanta",
-            "resim":"https://garbalia.com/wp-content/uploads/2021/09/garbalia-canada-hakiki-deri-bozuk-para-bolmeli-bordo-erkek-cuzdan-1-1.jpg"
-        },
-        {
-            "id": 35,
-            "urunAdi": "Spor Çanta",
-            "fiyat": 45.0,
-            "renk": "Yeşil",
-            "kategori": "AyakkabiCanta",
-            "resim":"https://contents.mediadecathlon.com/p2273145/k$052d742a3e8d93ed1a5835ab70ddf43c/sq/tote-yesil-spor-canta-25-l-fitness.jpg?format=auto&f=800x0"
-        },
-        {
-            "id": 36,
-            "urunAdi": "Samsung S22",
-            "fiyat": 1200.0,
-            "marka": "Samsung",
-            "kategori": "Elektronik",
-            "resim":"https://cdn.dsmcdn.com/ty352/product/media/images/20220307/15/64122105/405981844/1/1_org_zoom.jpg"
-        },
-        {
-            "id": 37,
-            "urunAdi": "Kablosuz Kulaklık",
-            "fiyat": 50.0,
-            "marka": "Sony",
-            "kategori": "Elektronik",
-            "resim":"https://cdn.dsmcdn.com/ty52/product/media/images/20210112/9/51918424/57324552/2/2_org_zoom.jpg"
-        },
-        {
-            "id": 38,
-            "urunAdi": "iPad Pro 3.Nesil",
-            "fiyat": 300.0,
-            "marka": "Apple",
-            "kategori": "Elektronik",
-            "resim":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/122692-ana_large.jpg"
-        },
-        {
-            "id": 39,
-            "urunAdi": "PowerBank",
-            "fiyat": 30.0,
-            "marka": "Anker",
-            "kategori": "Elektronik",
-            "resim":"https://productimages.hepsiburada.net/s/477/375-375/110000520299522.jpg"
-        },
-        {
-            "id": 40,
-            "urunAdi": "Akıllı Saat",
-            "fiyat": 150.0,
-            "marka": "Fitbit",
-            "kategori": "Elektronik",
-            "resim":"https://cdn.akakce.com/fitbit/fitbit-versa-z.jpg"
-        },
-        {
-            "id": 41,
-            "urunAdi": "Yoga Matı",
-            "fiyat": 20.0,
-            "renk": "Mor",
-            "kategori": "SporOutdoor",
-            "resim":"https://cdn2.dokuzsoft.com/u/yinyogashop/img/c/m/a/mat6-jpeg-1603868598.jpg"
-        },
-        {
-            "id": 42,
-            "urunAdi": "Koşu Ayakkabısı",
-            "fiyat": 90.0,
-            "renk": "Turuncu",
-            "kategori": "SporOutdoor",
-            "resim":"https://00846a.cdn.akinoncloud.com/products/2022/09/30/241623/9638117c-cfe5-45c0-8af3-1e5633be2e71_size750x932.jpg"
-        },
-        {
-            "id": 43,
-            "urunAdi": "Spor Şort",
-            "fiyat": 25.0,
-            "renk": "Siyah",
-            "kategori": "SporOutdoor",
-            "resim":"https://sky-static.mavi.com/mnresize/715/1014/0810047-900_image_2.jpg"
-        },
-        {
-            "id": 44,
-            "urunAdi": "Kamp Çadırı",
-            "fiyat": 150.0,
-            "renk": "Yeşil",
-            "kategori": "SporOutdoor",
-            "resim":"https://cdn.dsmcdn.com/ty493/product/media/images/20220728/21/151604273/119792198/1/1_org_zoom.jpg"
-        },
-        {
-            "id": 45,
-            "urunAdi": "Bisiklet",
-            "fiyat": 300.0,
-            "renk": "Kırmızı",
-            "kategori": "SporOutdoor",
-            "resim":"https://www.gizerler.com/assets/product-images/137000/bisan-roadstar-gl-26-58-cm-kirmizi-hizmet-bisiklet_68034.jpg"
-        },
-        {
-            "id": 46,
-            "urunAdi": "Akıllı TV",
-            "fiyat": 800.0,
-            "marka": "LG",
-            "kategori": "CokSatanlar",
-            "resim":"https://productimages.hepsiburada.net/s/28/375-375/10195416350770.jpg"
-        },
-        {
-            "id": 47,
-            "urunAdi": "Kahve Makinesi",
-            "fiyat": 60.0,
-            "marka": "Bosch",
-            "kategori": "CokSatanlar",
-            "resim":"https://cdn.dsmcdn.com/ty41/product/media/images/20210103/15/44764679/60571704/1/1_org_zoom.jpg"
-        },
-        {
-            "id": 48,
-            "urunAdi": "Gaming Laptop",
-            "fiyat": 1200.0,
-            "marka": "MSI",
-            "kategori": "CokSatanlar",
-            "resim":"https://www.gaming.gen.tr/wp-content/uploads/2023/03/msi-pulse-15-b13vfk-498tr-intel-core-i7-13700h-32gb-1tb-ssd-rtx4060-15-6-inc-144hz-full-hd-w11-gaming-laptop-y.jpg"
-        },
-        {
-            "id": 49,
-            "urunAdi": "Akıllı Ev Termostatı",
-            "fiyat": 80.0,
-            "marka": "Nest",
-            "kategori": "CokSatanlar",
-            "resim":"https://productimages.hepsiburada.net/s/43/375-375/10770362368050.jpg"
-        },
-        {
-            "id": 50,
-            "urunAdi": "Robot Süpürge",
-            "fiyat": 200.0,
-            "marka": "iRobot",
-            "kategori": "CokSatanlar",
-            "resim":"https://cdn.akakce.com/irobot/irobot-roomba-i7-plus-7550-z.jpg"
-        }
-    ],
-    "users":[
-        {
-            "id":100,
-            "kullaniciAdi":"umutumer",
-            "mail":"utumer6@gmail.com",
-            "sifre":"password123",
-            "favoriler":[],
-            "sepetim":[],
-            "status":"Admin",
-            "isLogin":false
-            
-        },
-        {
-            "id":101,
-            "kullaniciAdi":"emirhancam",
-            "sifre":"password321",
-            "favoriler":[],
-            "sepetim":[],
-            "status":"Uye",
-            "isLogin":false
-        }
-    ]
+  "product": [
+    {
+      "id": 1,
+      "urunAdi": "Elbise",
+      "fiyat": 150,
+      "renk": "Siyah",
+      "kategori": "Kadın",
+      "resim": "https://static.ticimax.cloud/10729/uploads/urunresimleri/buyuk/drape-detay-uzun-kol-midi-kadin-elbise-570c02.jpg"
+    },
+    {
+      "id": 2,
+      "urunAdi": "Çanta",
+      "fiyat": 80,
+      "renk": "Beyaz",
+      "kategori": "Kadın",
+      "resim": "https://www.im-polo.com/wp-content/uploads/2022/10/impolo-beti-omuz-beyaz-taba-kadin-canta-788.jpg"
+    },
+    {
+      "id": 3,
+      "urunAdi": "Ayakkabı",
+      "fiyat": 120,
+      "renk": "Kırmızı",
+      "kategori": "Kadın",
+      "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg"
+    },
+    {
+      "id": 4,
+      "urunAdi": "Gözlük",
+      "fiyat": 50,
+      "renk": "Mavi",
+      "kategori": "Kadın",
+      "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg"
+    },
+    {
+      "id": 5,
+      "urunAdi": "Şort",
+      "fiyat": 100,
+      "renk": "Yeşil",
+      "kategori": "Kadın",
+      "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg"
+    },
+    {
+      "id": 6,
+      "urunAdi": "Gömlek",
+      "fiyat": 80,
+      "renk": "Mavi",
+      "kategori": "Erkek",
+      "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg"
+    },
+    {
+      "id": 7,
+      "urunAdi": "Pantolon",
+      "fiyat": 90,
+      "renk": "Siyah",
+      "kategori": "Erkek",
+      "resim": "https://cdn.dsmcdn.com/ty996/product/media/images/prod/SPM/PIM/20230909/20/9c831f8d-668c-3d3b-a2eb-3b9c0680fac5/1_org_zoom.jpg"
+    },
+    {
+      "id": 8,
+      "urunAdi": "Ceket",
+      "fiyat": 120,
+      "renk": "Gri",
+      "kategori": "Erkek",
+      "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg"
+    },
+    {
+      "id": 9,
+      "urunAdi": "SweatShirt",
+      "fiyat": 30,
+      "renk": "Kahverengi",
+      "kategori": "Erkek",
+      "resim": "https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/pim/productimages/20232/6896525/v1/l_20232-w3hs46z8-vc8-92-74-89-188_a.jpg"
+    },
+    {
+      "id": 10,
+      "urunAdi": "Saat",
+      "fiyat": 200,
+      "renk": "Metalik Gri",
+      "kategori": "Erkek",
+      "resim": "https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg"
+    },
+    {
+      "id": 11,
+      "urunAdi": "Bebek Body",
+      "fiyat": 25,
+      "renk": "Pembe",
+      "kategori": "AnneCocuk",
+      "resim": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85,format=auto/13027/uploads/urunresimleri/buyuk/deniz-canlilari-baskili-beyaz-unisex-b-e2379f.jpg"
+    },
+    {
+      "id": 12,
+      "urunAdi": "Anne Bluz",
+      "fiyat": 60,
+      "renk": "Beyaz",
+      "kategori": "AnneCocuk",
+      "resim": "https://www.cdnaws.com/i/freshmodacomtr/ZW3D2Lqi2qQZW3D2QvGYHPsSdwLZW3D2/urunler/641afec070292-641afec072dec.jpeg"
+    },
+    {
+      "id": 13,
+      "urunAdi": "Çocuk Ayakkabı",
+      "fiyat": 45,
+      "renk": "Mavi",
+      "kategori": "AnneCocuk",
+      "resim": "https://img.slazenger.com.tr/slazenger-kunti-i-sneaker-erkek-cocuk-ayakkabi-beyaz-turuncu-11148-sneaker-230207-11-B.jpg?height=750"
+    },
+    {
+      "id": 14,
+      "urunAdi": "Hamile Pantolon",
+      "fiyat": 70,
+      "renk": "Siyah",
+      "kategori": "AnneCocuk",
+      "resim": "https://www.sefamerve.com/image/cache/data/202104/17/sefamerve_pantolon_hubla1019_02_6697891618663536152_1-752x1152.jpg"
+    },
+    {
+      "id": 15,
+      "urunAdi": "Oyuncak Set",
+      "fiyat": 35,
+      "renk": "Renkli",
+      "kategori": "AnneCocuk",
+      "resim": "https://cdn.dsmcdn.com/ty971/product/media/images/20230720/13/395217892/127631360/2/2_org_zoom.jpg"
+    },
+    {
+      "id": 16,
+      "urunAdi": "Yastık Seti",
+      "fiyat": 40,
+      "renk": "Desenli",
+      "kategori": "EvYasam",
+      "resim": "https://komforthome.com.tr/Resim/Minik/1000x1000_thumb_st02024.jpg"
+    },
+    {
+      "id": 17,
+      "urunAdi": "Mutfak Tencere Seti",
+      "fiyat": 120,
+      "renk": "Gümüş",
+      "kategori": "EvYasam",
+      "resim": "https://cdn.karaca.com/image/cdndata/182/202209/600.15.01.2574/8699343501156-4.jpg"
+    },
+    {
+      "id": 18,
+      "urunAdi": "Banyo Havlu Seti",
+      "fiyat": 35,
+      "renk": "Beyaz",
+      "kategori": "EvYasam",
+      "resim": "https://n11scdn.akamaized.net/a1/375_535/04/49/79/52/IMG-6759343251717698693.jpg"
+    },
+    {
+      "id": 19,
+      "urunAdi": "Halı",
+      "fiyat": 80,
+      "renk": "Kahverengi",
+      "kategori": "EvYasam",
+      "resim": "https://www.festivalhali.com/amara-modern-mavi-oda-halisi-m1102a-amara-festival-hali-m1102a-675-95-B.jpg"
+    },
+    {
+      "id": 20,
+      "urunAdi": "Masa Lambası",
+      "fiyat": 50,
+      "renk": "Altın",
+      "kategori": "EvYasam",
+      "resim": "https://cdn.dsmcdn.com/ty826/product/media/images/20230414/16/324686757/853264521/7/7_org_zoom.jpg"
+    },
+    {
+      "id": 21,
+      "urunAdi": "Kahve",
+      "fiyat": 15,
+      "marka": "Arabica",
+      "kategori": "Supermarket",
+      "resim": "https://productimages.hepsiburada.net/s/44/375-375/10802033295410.jpg"
+    },
+    {
+      "id": 22,
+      "urunAdi": "Makarna",
+      "fiyat": 5,
+      "marka": "Barilla",
+      "kategori": "Supermarket",
+      "resim": "https://static.ticimax.cloud/48857/uploads/urunresimleri/buyuk/1005154-113e2b.jpg"
+    },
+    {
+      "id": 23,
+      "urunAdi": "Cips",
+      "fiyat": 8,
+      "marka": "Lays",
+      "kategori": "Supermarket",
+      "resim": "https://ardenmarket.com.tr/media/catalog/product/cache/0b154ba1d9ffbc98998b9163ce10b49b/l/a/lay_s_klasik_patates_cipsi_parti_boy_150_g.jpg"
+    },
+    {
+      "id": 24,
+      "urunAdi": "Tuvalet Kağıdı",
+      "fiyat": 12,
+      "marka": "Cottonelle",
+      "kategori": "Supermarket",
+      "resim": "https://m.media-amazon.com/images/I/81RW-JyiJDL.jpg"
+    },
+    {
+      "id": 25,
+      "urunAdi": "Deterjan",
+      "fiyat": 18,
+      "marka": "Persil",
+      "kategori": "Supermarket",
+      "resim": "https://m.media-amazon.com/images/I/71B2Z6wwXnL.jpg"
+    },
+    {
+      "id": 26,
+      "urunAdi": "Far Paleti",
+      "fiyat": 40,
+      "marka": "Urban Decay",
+      "kategori": "Kozmetik",
+      "resim": "https://cdn03.ciceksepeti.com/cicek/kcm16156600-1/L/ud-model-naked-heat-far-paleti-kcm16156600-1-27fb0d96978542548e904e271c966ea5.jpg"
+    },
+    {
+      "id": 27,
+      "urunAdi": "Parfüm",
+      "fiyat": 70,
+      "marka": "Chanel",
+      "kategori": "Kozmetik",
+      "resim": "https://cdn.dsmcdn.com/ty997/product/media/images/prod/SPM/PIM/20230911/05/d20f0cb8-9a72-3aa9-b692-cf8659ba4b74/1_org_zoom.jpg"
+    },
+    {
+      "id": 28,
+      "urunAdi": "Şampuan",
+      "fiyat": 15,
+      "marka": "Pantene",
+      "kategori": "Kozmetik",
+      "resim": "https://images.migrosone.com/sanalmarket/product/34255943/34255943-2f9775-1650x1650.jpg"
+    },
+    {
+      "id": 29,
+      "urunAdi": "Ruj",
+      "fiyat": 20,
+      "marka": "Maybelline",
+      "kategori": "Kozmetik",
+      "resim": "https://flavus.com/cdn/shop/products/1_org_zoom_6d99ed32-7a82-4790-af4a-b969c8f9fa79_grande.jpg?v=1681941123"
+    },
+    {
+      "id": 30,
+      "urunAdi": "Nemlendirici Krem",
+      "fiyat": 25,
+      "marka": "Nivea",
+      "kategori": "Kozmetik",
+      "resim": "https://www.dermoeczanem.com/nivea-soft-nemlendirici-bakim-kremi-75-ml-nivea-117170-47-B.jpg"
+    },
+    {
+      "id": 31,
+      "urunAdi": "Spor Ayakkabı",
+      "fiyat": 100,
+      "renk": "Siyah",
+      "kategori": "AyakkabiCanta",
+      "resim": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85,format=auto/59755/uploads/urunresimleri/buyuk/kadin-siyah-spor-ayakkabi-dnz-91f7c-.jpg"
+    },
+    {
+      "id": 32,
+      "urunAdi": "Topuklu Ayakkabı",
+      "fiyat": 80,
+      "renk": "Bej",
+      "kategori": "AyakkabiCanta",
+      "resim": "https://cdn.dsmcdn.com/ty6/product/media/images/20200716/19/4635552/77107432/1/1_org_zoom.jpg"
+    },
+    {
+      "id": 33,
+      "urunAdi": "Sırt Çantası",
+      "fiyat": 60,
+      "renk": "Gri",
+      "kategori": "AyakkabiCanta",
+      "resim": "https://akn-lacoste.a-cdn.akinoncloud.com/products/2022/10/25/192525/ee915d7b-7a43-4db9-82b4-fc631e090b57_size2000x2000_cropCenter.jpg"
+    },
+    {
+      "id": 34,
+      "urunAdi": "Cüzdan",
+      "fiyat": 25,
+      "renk": "Bordo",
+      "kategori": "AyakkabiCanta",
+      "resim": "https://garbalia.com/wp-content/uploads/2021/09/garbalia-canada-hakiki-deri-bozuk-para-bolmeli-bordo-erkek-cuzdan-1-1.jpg"
+    },
+    {
+      "id": 35,
+      "urunAdi": "Spor Çanta",
+      "fiyat": 45,
+      "renk": "Yeşil",
+      "kategori": "AyakkabiCanta",
+      "resim": "https://contents.mediadecathlon.com/p2273145/k$052d742a3e8d93ed1a5835ab70ddf43c/sq/tote-yesil-spor-canta-25-l-fitness.jpg?format=auto&f=800x0"
+    },
+    {
+      "id": 36,
+      "urunAdi": "Samsung S22",
+      "fiyat": 1200,
+      "marka": "Samsung",
+      "kategori": "Elektronik",
+      "resim": "https://cdn.dsmcdn.com/ty352/product/media/images/20220307/15/64122105/405981844/1/1_org_zoom.jpg"
+    },
+    {
+      "id": 37,
+      "urunAdi": "Kablosuz Kulaklık",
+      "fiyat": 50,
+      "marka": "Sony",
+      "kategori": "Elektronik",
+      "resim": "https://cdn.dsmcdn.com/ty52/product/media/images/20210112/9/51918424/57324552/2/2_org_zoom.jpg"
+    },
+    {
+      "id": 38,
+      "urunAdi": "iPad Pro 3.Nesil",
+      "fiyat": 300,
+      "marka": "Apple",
+      "kategori": "Elektronik",
+      "resim": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/122692-ana_large.jpg"
+    },
+    {
+      "id": 39,
+      "urunAdi": "PowerBank",
+      "fiyat": 30,
+      "marka": "Anker",
+      "kategori": "Elektronik",
+      "resim": "https://productimages.hepsiburada.net/s/477/375-375/110000520299522.jpg"
+    },
+    {
+      "id": 40,
+      "urunAdi": "Akıllı Saat",
+      "fiyat": 150,
+      "marka": "Fitbit",
+      "kategori": "Elektronik",
+      "resim": "https://cdn.akakce.com/fitbit/fitbit-versa-z.jpg"
+    },
+    {
+      "id": 41,
+      "urunAdi": "Yoga Matı",
+      "fiyat": 20,
+      "renk": "Mor",
+      "kategori": "SporOutdoor",
+      "resim": "https://cdn2.dokuzsoft.com/u/yinyogashop/img/c/m/a/mat6-jpeg-1603868598.jpg"
+    },
+    {
+      "id": 42,
+      "urunAdi": "Koşu Ayakkabısı",
+      "fiyat": 90,
+      "renk": "Turuncu",
+      "kategori": "SporOutdoor",
+      "resim": "https://00846a.cdn.akinoncloud.com/products/2022/09/30/241623/9638117c-cfe5-45c0-8af3-1e5633be2e71_size750x932.jpg"
+    },
+    {
+      "id": 43,
+      "urunAdi": "Spor Şort",
+      "fiyat": 25,
+      "renk": "Siyah",
+      "kategori": "SporOutdoor",
+      "resim": "https://sky-static.mavi.com/mnresize/715/1014/0810047-900_image_2.jpg"
+    },
+    {
+      "id": 44,
+      "urunAdi": "Kamp Çadırı",
+      "fiyat": 150,
+      "renk": "Yeşil",
+      "kategori": "SporOutdoor",
+      "resim": "https://cdn.dsmcdn.com/ty493/product/media/images/20220728/21/151604273/119792198/1/1_org_zoom.jpg"
+    },
+    {
+      "id": 45,
+      "urunAdi": "Bisiklet",
+      "fiyat": 300,
+      "renk": "Kırmızı",
+      "kategori": "SporOutdoor",
+      "resim": "https://www.gizerler.com/assets/product-images/137000/bisan-roadstar-gl-26-58-cm-kirmizi-hizmet-bisiklet_68034.jpg"
+    },
+    {
+      "id": 46,
+      "urunAdi": "Akıllı TV",
+      "fiyat": 800,
+      "marka": "LG",
+      "kategori": "CokSatanlar",
+      "resim": "https://productimages.hepsiburada.net/s/28/375-375/10195416350770.jpg"
+    },
+    {
+      "id": 47,
+      "urunAdi": "Kahve Makinesi",
+      "fiyat": 60,
+      "marka": "Bosch",
+      "kategori": "CokSatanlar",
+      "resim": "https://cdn.dsmcdn.com/ty41/product/media/images/20210103/15/44764679/60571704/1/1_org_zoom.jpg"
+    },
+    {
+      "id": 48,
+      "urunAdi": "Gaming Laptop",
+      "fiyat": 1200,
+      "marka": "MSI",
+      "kategori": "CokSatanlar",
+      "resim": "https://www.gaming.gen.tr/wp-content/uploads/2023/03/msi-pulse-15-b13vfk-498tr-intel-core-i7-13700h-32gb-1tb-ssd-rtx4060-15-6-inc-144hz-full-hd-w11-gaming-laptop-y.jpg"
+    },
+    {
+      "id": 49,
+      "urunAdi": "Akıllı Ev Termostatı",
+      "fiyat": 80,
+      "marka": "Nest",
+      "kategori": "CokSatanlar",
+      "resim": "https://productimages.hepsiburada.net/s/43/375-375/10770362368050.jpg"
+    },
+    {
+      "id": 50,
+      "urunAdi": "Robot Süpürge",
+      "fiyat": 200,
+      "marka": "iRobot",
+      "kategori": "CokSatanlar",
+      "resim": "https://cdn.akakce.com/irobot/irobot-roomba-i7-plus-7550-z.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 100,
+      "kullaniciAdi": "umutumer",
+      "mail": "utumer6@gmail.com",
+      "sifre": "password123",
+      "favoriler": [],
+      "sepetim": [],
+      "status": "Admin",
+      "isLogin": false
+    },
+    {
+      "id": 101,
+      "kullaniciAdi": "emirhancam",
+      "sifre": "password321",
+      "favoriler": [],
+      "sepetim": [],
+      "status": "Uye",
+      "isLogin": false
+    }
+  ]
 }

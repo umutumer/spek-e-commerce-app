@@ -1,6 +1,6 @@
 import axios from "axios";
 import { setProduct } from "./ProductSlice";
-import { delUser, setUser, setUserField, upUser } from "./UserSlice";
+import { delUser, loginUser, logoutUser, setUser, setUserField, upUser } from "./UserSlice";
 
 //Product
 const getProduct = () => async (dispatch) => {
@@ -57,4 +57,31 @@ const deleteUser = (userId) => async (dispatch) => {
     console.error("Kullanıcı silinirken hata oluştu:", error);
   }
 };
-export { getProduct, registerUser, getUser, updateUser, deleteUser };
+const login = (username, password) => async (dispatch) => {
+    try {
+      const response = await axios.get(`http://localhost:3005/users?kullaniciAdi=${username}&sifre=${password}`);
+  
+      if (response.data.length > 0) {
+        const userId = response.data[0].id;
+  
+        await axios.patch(`http://localhost:3005/users/${userId}`, { isLogin: true });
+  
+        dispatch(loginUser({ userId }));
+      } else {
+        console.error('Kullanıcı adı veya şifre yanlış.');
+      }
+    } catch (error) {
+      console.error('Bir hata oluştu:', error.message);
+    }
+  };
+const logout = (userId) => async (dispatch) => {
+    try {
+     const response =   await axios.patch(`http://localhost:3005/users/${userId}`, { isLogin: false });
+     console.log(response.data);
+        dispatch(logoutUser({ userId }));
+
+    } catch (error) {
+      console.error('Bir hata oluştu:', error.message);
+    }
+  };
+export { getProduct, registerUser, getUser, updateUser, deleteUser ,login , logout };

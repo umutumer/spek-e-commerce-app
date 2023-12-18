@@ -20,8 +20,22 @@ const userSlice = createSlice({
         },
         setUserField:(state,action) =>{
             return{...state,[action.field]:action.value}
+        },
+        loginUser:(state,action) =>{
+            return{
+                ...state,
+                isLogin:true,
+                userId:action.userId,
+            }
+        },
+        logoutUser:(state,action) =>{
+            return{
+                ...state,
+                isLogin:false,
+                userId:action.userId,
+            }
         }
     }
 })
-export const {setUser,upUser,delUser,setUserField} =userSlice.actions;
+export const {setUser,upUser,delUser,setUserField,loginUser,logoutUser} =userSlice.actions;
 export default userSlice.reducer;

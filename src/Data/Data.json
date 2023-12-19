@@ -6,7 +6,9 @@
       "fiyat": 150,
       "renk": "Siyah",
       "kategori": "Kadın",
-      "resim": "https://static.ticimax.cloud/10729/uploads/urunresimleri/buyuk/drape-detay-uzun-kol-midi-kadin-elbise-570c02.jpg"
+      "beden": "L",
+      "resim": "https://static.ticimax.cloud/10729/uploads/urunresimleri/buyuk/drape-detay-uzun-kol-midi-kadin-elbise-570c02.jpg",
+      "urunaciklama": "Bu siyah elbise, zarif drape detayları ve uzun kollu tasarımıyla öne çıkıyor. Kadın giyim kategorisinde, rahat ve şık bir seçenek olarak öne çıkan bu elbise, L beden seçeneğiyle sunulmaktadır."
     },
     {
       "id": 2,
@@ -410,7 +412,7 @@
       "favoriler": [],
       "sepetim": [],
       "status": "Admin",
-      "isLogin": false
+      "isLogin": true
     },
     {
       "id": 101,

@@ -41,9 +41,9 @@ const Navigation = () => {
   return (
     <nav className="flex sm:flex-row flex-col items-center sm:justify-between justify-center bg-white dark:bg-slate-900 w-full sm:h-28 h-40">
       <div className="p-2 sm:w-[20%] w-full text-center">
-        <h3 className="text-black dark:text-white text-xl font-semibold">
+        <Link to='/' className="text-black dark:text-white text-xl font-semibold">
           SPEK E COMMERCE
-        </h3>
+        </Link>
       </div>
       <div className="p-2 sm:w-[50%] w-full relative">
         <input
@@ -61,13 +61,34 @@ const Navigation = () => {
       </div>
       <div className="p-2 sm:w-[30%] w-full flex items-center justify-center relative">
         {loggedInUser ? (
-          <button
+         <div className="relative">
+           <button
             onClick={() => toggleDropdown()}
             className="flex items-center mx-2 hover:text-orange-500 duration-200 text-black dark:text-white font-medium dark:hover:text-blue-600 "
           >
             <FaUser className="mr-1" />
             Hesabım
           </button>
+          {isDropdownOpen && (
+          <div className="w-40 absolute top-8 -left-6 flex flex-col items-center bg-white border-2 rounded z-50 ">
+            <Link className="w-full py-1 border-b text-center">
+              Kullanıcı Bilgilerim
+            </Link>
+            <Link className="w-full py-1 border-b text-center">
+              Siparişlerim
+            </Link>
+            {loggedInUser.status === "Admin" && (
+              <Link className="w-full py-1 border-b text-center">Admin</Link>
+            )}
+            <button
+            onClick={() => dispatch(logout(loggedInUser.id))}
+            className="w-full  py-1 text-center">Çıkış Yap</button>
+            <div className="absolute -top-5  z-40">
+              <GoTriangleUp className="text-gray-300 text-3xl" />
+            </div>
+          </div>
+        )}
+         </div>
         ) : (
           <button
             onClick={() => navigate("/login")}
@@ -86,25 +107,6 @@ const Navigation = () => {
           Sepet
         </button>{" "}
         <DarkThemeToggle className="text-black dark:text-white" />
-        {isDropdownOpen && (
-          <div className="w-40 absolute top-14 left-5 flex flex-col items-center bg-white border-2 rounded z-50 ">
-            <Link className="w-full py-1 border-b text-center">
-              Kullanıcı Bilgilerim
-            </Link>
-            <Link className="w-full py-1 border-b text-center">
-              Siparişlerim
-            </Link>
-            {loggedInUser.status === "Admin" && (
-              <Link className="w-full py-1 border-b text-center">Admin</Link>
-            )}
-            <button
-            onClick={() => dispatch(logout(loggedInUser.id))}
-            className="w-full  py-1 text-center">Çıkış Yap</button>
-            <div className="absolute -top-5  z-40">
-              <GoTriangleUp className="text-gray-300 text-3xl" />
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

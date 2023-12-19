@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Page/Home';
 import Login from './Page/Login';
 import Register from './Page/Register';
+import Details from './Page/Details';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
+      <Route path='/details/:id' element={<Details />} />
     </Routes>
     </BrowserRouter>
   );

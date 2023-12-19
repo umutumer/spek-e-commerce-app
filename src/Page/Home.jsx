@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../Redux/Action";
 import { Navbar } from "flowbite-react";
 import { setSearchQuery } from "../Redux/SearchSlice";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -69,7 +70,9 @@ const Home = () => {
                 key={category}
                 onClick={() => handleCategoryClick(category)}
                 className={`hover:text-orange-500 duration-200 text-black dark:text-white dark:hover:text-blue-600 ${
-                  selectedCategory === category ? "text-orange-500 dark:text-blue-600" : ""
+                  selectedCategory === category
+                    ? "text-orange-500 dark:text-blue-600"
+                    : ""
                 }`}
               >
                 {category}
@@ -83,11 +86,13 @@ const Home = () => {
         {filteredProduct.map((prod, index) => (
           <div
             key={index}
-            className=" md:w-52 w-40 md:h-96 border bg-white dark:bg-slate-900 dark:border-slate-600 m-5"
+            className=" md:w-52 w-40 md:h-96 border bg-white dark:bg-slate-900 dark:border-slate-600 m-5 relative"
           >
-            <img src={prod.resim} alt="" className=" w-full md:h-72 h-60" />
-            <p className="m-0.5">{prod.urunAdi}</p>
-            <p className="m-0.5">{prod.fiyat}₺</p>
+            <Link to={`/details/${prod.id}`}>
+              <img src={prod.resim} alt="" className=" w-full md:h-72 h-60" />
+              <p className="m-0.5">{prod.urunAdi}</p>
+              <p className="m-0.5">{prod.fiyat}₺</p>
+            </Link>
             <div className="w-full flex justify-center">
               <button className="bg-orange-500 text-white w-48 h-7 rounded-xl m-0.5 dark:bg-blue-600">
                 Sepete Ekle

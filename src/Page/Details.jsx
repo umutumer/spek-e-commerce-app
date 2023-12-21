@@ -1,11 +1,13 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import Navigation from "../Components/Navigation";
 import { Link } from "react-router-dom";
+import { addToCart, getProduct, getUser } from "../Redux/Action";
 
 const Details = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const products = useSelector((state) =>
     state.product.find((product) => product.id === parseInt(id))
   );
@@ -14,6 +16,20 @@ const Details = () => {
       (prod) => prod.kategori === products.kategori && prod.id !== products.id
     )
   );
+  const users = useSelector((state) => state.users);
+  const isLoggedIn = users.find((user) => user.isLogin);
+  const UserId = isLoggedIn ? isLoggedIn.id : null;
+
+  const handleAddToCart = (product) =>{
+    if (UserId) {
+      dispatch(addToCart(UserId,product))
+    }
+}
+console.log(useSelector((state) => state.users));
+useEffect(() => {
+  dispatch(getProduct());
+  dispatch(getUser());
+}, [dispatch]);
   return (
     <div className="w-full h-full flex flex-col items-center min-h-screen bg-white text-black dark:bg-slate-800 dark:text-white">
       <Navigation />
@@ -69,7 +85,7 @@ const Details = () => {
               </span>{" "}
               {products.fiyat}₺
             </p>
-            <button className="bg-orange-500 text-white w-[90%] h-7 rounded-xl my-5 dark:bg-blue-600">
+            <button onClick={() => handleAddToCart(products)} className="bg-orange-500 text-white w-[90%] h-7 rounded-xl my-5 dark:bg-blue-600">
               Sepete Ekle
             </button>
             <p>

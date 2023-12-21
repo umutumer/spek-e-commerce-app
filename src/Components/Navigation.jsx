@@ -18,7 +18,6 @@ const Navigation = () => {
   const loggedInUser = Array.isArray(users)
     ? users.find((user) => user.isLogin)
     : null;
-
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -71,7 +70,7 @@ const Navigation = () => {
           </button>
           {isDropdownOpen && (
           <div className="w-40 absolute top-8 -left-6 flex flex-col items-center bg-white border-2 rounded z-50 ">
-            <Link className="w-full py-1 border-b text-center">
+            <Link to='/userinformation' className="w-full py-1 border-b text-center">
               Kullanıcı Bilgilerim
             </Link>
             <Link className="w-full py-1 border-b text-center">
@@ -102,10 +101,18 @@ const Navigation = () => {
           <MdFavorite className="mr-1" />
           Favorilerim
         </button>
-        <button className="flex items-center mx-2  hover:text-orange-500 duration-200 text-black dark:text-white font-medium dark:hover:text-blue-600 ">
-          <FaCartShopping className="mr-1" />
-          Sepet
-        </button>{" "}
+       {loggedInUser ? (
+         <Link to='/cart' className="flex items-center mx-2  hover:text-orange-500 duration-200 text-black dark:text-white font-medium dark:hover:text-blue-600 ">
+         <FaCartShopping className="mr-1" />
+         Sepet
+       </Link>
+       ):(
+        <Link to='/login' className="flex items-center mx-2  hover:text-orange-500 duration-200 text-black dark:text-white font-medium dark:hover:text-blue-600 ">
+         <FaCartShopping className="mr-1" />
+         Sepet
+       </Link>
+       )
+       }
         <DarkThemeToggle className="text-black dark:text-white" />
       </div>
     </nav>

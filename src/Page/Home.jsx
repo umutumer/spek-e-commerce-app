@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../Components/Navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct } from "../Redux/Action";
+import { addToCart, getProduct, getUser } from "../Redux/Action";
 import { Navbar } from "flowbite-react";
 import { setSearchQuery } from "../Redux/SearchSlice";
 import { Link } from "react-router-dom";
@@ -10,6 +10,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product);
   const searchQuery = useSelector((state) => state.search.searchQuery);
+  const users = useSelector((state) => state.users);
+  const isLoggedIn = users.find((user) => user.isLogin);
+  const UserId = isLoggedIn ? isLoggedIn.id : null;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Tüm Ürünler");
 
@@ -47,9 +50,14 @@ const Home = () => {
     setIsMenuOpen(false);
     dispatch(setSearchQuery(""));
   };
-
+  const handleAddToCart = (product) =>{
+      if (UserId) {
+        dispatch(addToCart(UserId,product))
+      }
+  }
   useEffect(() => {
     dispatch(getProduct());
+    dispatch(getUser());
   }, [dispatch]);
 
   return (
@@ -94,7 +102,9 @@ const Home = () => {
               <p className="m-0.5">{prod.fiyat}₺</p>
             </Link>
             <div className="w-full flex justify-center">
-              <button className="bg-orange-500 text-white w-48 h-7 rounded-xl m-0.5 dark:bg-blue-600">
+              <button
+              onClick={()=> handleAddToCart(prod)}
+               className="bg-orange-500 text-white w-48 h-7 rounded-xl m-0.5 dark:bg-blue-600">
                 Sepete Ekle
               </button>
             </div>

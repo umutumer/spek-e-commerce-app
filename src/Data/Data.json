@@ -412,42 +412,50 @@
       "favoriler": [],
       "sepetim": [
         {
-          "id": 1,
-          "urunAdi": "Elbise",
-          "fiyat": 150,
-          "renk": "Siyah",
-          "kategori": "Kadın",
-          "beden": "L",
-          "resim": "https://static.ticimax.cloud/10729/uploads/urunresimleri/buyuk/drape-detay-uzun-kol-midi-kadin-elbise-570c02.jpg",
-          "urunaciklama": "Bu siyah elbise, zarif drape detayları ve uzun kollu tasarımıyla öne çıkıyor. Kadın giyim kategorisinde, rahat ve şık bir seçenek olarak öne çıkan bu elbise, L beden seçeneğiyle sunulmaktadır.",
-          "adet": 2
+          "id": 50,
+          "urunAdi": "Robot Süpürge",
+          "fiyat": 200,
+          "marka": "iRobot",
+          "kategori": "CokSatanlar",
+          "resim": "https://cdn.akakce.com/irobot/irobot-roomba-i7-plus-7550-z.jpg",
+          "adet": 4,
+          "toplamFiyat": 800
         },
         {
-          "id": 2,
-          "urunAdi": "Çanta",
-          "fiyat": 80,
-          "renk": "Beyaz",
+          "id": 5,
+          "urunAdi": "Şort",
+          "fiyat": 100,
+          "renk": "Yeşil",
           "kategori": "Kadın",
-          "resim": "https://www.im-polo.com/wp-content/uploads/2022/10/impolo-beti-omuz-beyaz-taba-kadin-canta-788.jpg",
+          "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
           "adet": 1
         },
         {
-          "id": 33,
-          "urunAdi": "Sırt Çantası",
-          "fiyat": 60,
-          "renk": "Gri",
-          "kategori": "AyakkabiCanta",
-          "resim": "https://akn-lacoste.a-cdn.akinoncloud.com/products/2022/10/25/192525/ee915d7b-7a43-4db9-82b4-fc631e090b57_size2000x2000_cropCenter.jpg",
+          "id": 6,
+          "urunAdi": "Gömlek",
+          "fiyat": 80,
+          "renk": "Mavi",
+          "kategori": "Erkek",
+          "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
           "adet": 1
         },
         {
-          "id": 32,
-          "urunAdi": "Topuklu Ayakkabı",
-          "fiyat": 80,
-          "renk": "Bej",
-          "kategori": "AyakkabiCanta",
-          "resim": "https://cdn.dsmcdn.com/ty6/product/media/images/20200716/19/4635552/77107432/1/1_org_zoom.jpg",
-          "adet": 3
+          "id": 4,
+          "urunAdi": "Gözlük",
+          "fiyat": 50,
+          "renk": "Mavi",
+          "kategori": "Kadın",
+          "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
+          "adet": 1
+        },
+        {
+          "id": 3,
+          "urunAdi": "Ayakkabı",
+          "fiyat": 120,
+          "renk": "Kırmızı",
+          "kategori": "Kadın",
+          "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
+          "adet": 1
         }
       ],
       "status": "Admin",

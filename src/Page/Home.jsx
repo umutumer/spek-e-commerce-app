@@ -5,6 +5,7 @@ import { addToCart, getProduct, getUser } from "../Redux/Action";
 import { Navbar } from "flowbite-react";
 import { setSearchQuery } from "../Redux/SearchSlice";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -53,6 +54,16 @@ const Home = () => {
   const handleAddToCart = (product) =>{
       if (UserId) {
         dispatch(addToCart(UserId,product))
+        toast.success('Sepete Eklendi!', {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
   }
   useEffect(() => {

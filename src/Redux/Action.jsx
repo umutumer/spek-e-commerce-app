@@ -110,7 +110,7 @@ const addToCart = (userId, product) => async (dispatch) => {
     if (existingProduct) {
       updateCart = {
         sepetim: currentUser.sepetim.map((item) =>
-        item.id === product.id ? {...item,adet:item.adet +1}:item
+        item.id === product.id ? {...item,adet:item.adet +1 ,toplamFiyat: item.fiyat*item.adet +item.fiyat}:item
         )
       }
     } else {

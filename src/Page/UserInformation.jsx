@@ -8,7 +8,6 @@ import { FaEdit } from "react-icons/fa";
 const UserInformation = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
-  console.log(users);
   const loggedInUser = Array.isArray(users)
     ? users.find((user) => user.isLogin)
     : null;
@@ -33,9 +32,9 @@ const UserInformation = () => {
     );
   } else {
     return (
-      <div className="w-full flex flex-col relative min-h-screen bg-white dark:bg-slate-900 dark:text-white">
+      <div className="w-full flex flex-col relative min-h-screen bg-white dark:bg-slate-800 dark:text-white">
         <Navigation />
-        <div className=" flex items-center justify-center w-full h-full ">
+        <div className=" flex items-center justify-center w-full h-full mt-5 ">
           <div className="flex flex-col sm:w-[30rem] w-96 items-center justify-center  sm:h-[30rem] h-full border dark:bg-slate-800 dark:border-slate-600 relative ">
             <div className="sm:w-32 w-full m-5 flex justify-center">
               <FaCircleUser className="text-orange-500 dark:text-blue-600 text-9xl" />

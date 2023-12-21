@@ -455,7 +455,8 @@
           "renk": "Kırmızı",
           "kategori": "Kadın",
           "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
-          "adet": 1
+          "adet": 2,
+          "toplamFiyat": 240
         }
       ],
       "status": "Admin",

@@ -10,7 +10,12 @@ const Cart = () => {
     ? users.find((user) => user.isLogin)
     : null;
   const Cart = loggedInUser && loggedInUser.sepetim;
-
+  const totalAmount = Cart
+  ? Cart.reduce((acc, product) => {
+      const price = product.adet === 1 ? product.fiyat : product.toplamFiyat;
+      return acc + price;
+    }, 0)
+  : 0;
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
@@ -19,7 +24,7 @@ const Cart = () => {
       <Navigation />
       <div>
         <div className="flex justify-center">
-          <table className="w-[50rem] mt-5 border dark:border-slate-700">
+          <table className="sm:w-[50rem] w-[30rem] sm:m-5 m-2 border dark:border-slate-700">
             <thead>
                 <tr className="border-b h-10 dark:border-b-slate-700 bg-gray-100 dark:bg-slate-900">
                     <th>Ürün Görseli</th>
@@ -32,7 +37,7 @@ const Cart = () => {
             <tbody>
                 {Cart && Cart.map((product,index) =>(
                     <tr key={index} className="text-center border-b bg-white even:bg-gray-100 dark:bg-slate-800 dark:even:bg-slate-900 dark:border-b-slate-700 " >
-                        <td ><img src={product.resim} alt="" className='w-28 h-40 m-2'  /></td>
+                        <td ><img src={product.resim} alt="" className='sm:w-28 w-20 sm:h-40 h-32 sm:m-2 m-1'/></td>
                         <td>{product.urunAdi}</td>
                         {product.renk && <td>{product.renk}</td>}
                         {product.marka && <td>{product.marka}</td>}
@@ -42,8 +47,10 @@ const Cart = () => {
                 ))}
             </tbody>
           </table>
-          <div className="m-5">
-            <h3>Toplam Ödenecek Tutar</h3>
+          <div className="sm:m-5 m-2 w-52 border dark:border-slate-700 h-full flex flex-col justify-center items-center">
+            <h3 className="w-full text-center dark:bg-slate-900 p-1 text-xl mb-2">Sepet Tutarı</h3>
+            <p className="p-1 w-full text-center text-xl mb-2">{totalAmount}₺</p>
+            <button className="my-2 p-1 w-[90%] bg-orange-500 dark:bg-blue-600 rounded text-lg text-white ">Sepeti Onayla</button>
           </div>
         </div>
       </div>

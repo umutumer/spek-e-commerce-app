@@ -418,8 +418,8 @@
           "marka": "iRobot",
           "kategori": "CokSatanlar",
           "resim": "https://cdn.akakce.com/irobot/irobot-roomba-i7-plus-7550-z.jpg",
-          "adet": 4,
-          "toplamFiyat": 800
+          "adet": 1,
+          "toplamFiyat": 200
         },
         {
           "id": 5,
@@ -428,7 +428,8 @@
           "renk": "Yeşil",
           "kategori": "Kadın",
           "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
-          "adet": 1
+          "adet": 1,
+          "toplamFiyat": 100
         },
         {
           "id": 6,
@@ -437,7 +438,8 @@
           "renk": "Mavi",
           "kategori": "Erkek",
           "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
-          "adet": 1
+          "adet": 1,
+          "toplamFiyat": 80
         },
         {
           "id": 4,
@@ -446,7 +448,8 @@
           "renk": "Mavi",
           "kategori": "Kadın",
           "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
-          "adet": 1
+          "adet": 1,
+          "toplamFiyat": 50
         },
         {
           "id": 3,
@@ -455,8 +458,17 @@
           "renk": "Kırmızı",
           "kategori": "Kadın",
           "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
-          "adet": 2,
-          "toplamFiyat": 240
+          "adet": 1,
+          "toplamFiyat": 120
+        },
+        {
+          "id": 10,
+          "urunAdi": "Saat",
+          "fiyat": 200,
+          "renk": "Metalik Gri",
+          "kategori": "Erkek",
+          "resim": "https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg",
+          "adet": 1
         }
       ],
       "status": "Admin",
@@ -467,7 +479,53 @@
       "kullaniciAdi": "emirhancam",
       "sifre": "password321",
       "favoriler": [],
-      "sepetim": [],
+      "sepetim": [
+        {
+          "id": 17,
+          "urunAdi": "Mutfak Tencere Seti",
+          "fiyat": 120,
+          "renk": "Gümüş",
+          "kategori": "EvYasam",
+          "resim": "https://cdn.karaca.com/image/cdndata/182/202209/600.15.01.2574/8699343501156-4.jpg",
+          "adet": 1
+        },
+        {
+          "id": 19,
+          "urunAdi": "Halı",
+          "fiyat": 80,
+          "renk": "Kahverengi",
+          "kategori": "EvYasam",
+          "resim": "https://www.festivalhali.com/amara-modern-mavi-oda-halisi-m1102a-amara-festival-hali-m1102a-675-95-B.jpg",
+          "adet": 1
+        },
+        {
+          "id": 20,
+          "urunAdi": "Masa Lambası",
+          "fiyat": 50,
+          "renk": "Altın",
+          "kategori": "EvYasam",
+          "resim": "https://cdn.dsmcdn.com/ty826/product/media/images/20230414/16/324686757/853264521/7/7_org_zoom.jpg",
+          "adet": 1
+        },
+        {
+          "id": 21,
+          "urunAdi": "Kahve",
+          "fiyat": 15,
+          "marka": "Arabica",
+          "kategori": "Supermarket",
+          "resim": "https://productimages.hepsiburada.net/s/44/375-375/10802033295410.jpg",
+          "adet": 1
+        },
+        {
+          "id": 24,
+          "urunAdi": "Tuvalet Kağıdı",
+          "fiyat": 12,
+          "marka": "Cottonelle",
+          "kategori": "Supermarket",
+          "resim": "https://m.media-amazon.com/images/I/81RW-JyiJDL.jpg",
+          "adet": 1
+        }
+      ],
       "status": "Uye",
       "isLogin": false
     }

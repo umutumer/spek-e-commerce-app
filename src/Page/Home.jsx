@@ -12,8 +12,10 @@ const Home = () => {
   const product = useSelector((state) => state.product);
   const searchQuery = useSelector((state) => state.search.searchQuery);
   const users = useSelector((state) => state.users);
-  const isLoggedIn = users.find((user) => user.isLogin);
-  const UserId = isLoggedIn ? isLoggedIn.id : null;
+  const loggedInUser = Array.isArray(users)
+    ? users.find((user) => user.isLogin)
+    : null;
+  const UserId = loggedInUser ? loggedInUser.id : null;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Tüm Ürünler");
 

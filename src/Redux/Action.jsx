@@ -128,6 +128,54 @@ const addToCart = (userId, product) => async (dispatch) => {
     console.error("Bir hata oluştu:", error.message);
   }
 };
+const quantityPlus = (userId,product) => async (dispatch) => {
+  try{
+    const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+    const currentUser = userResponse.data;
+    const existingProduct = currentUser.sepetim.find((item) => item.id === product.id)
+    let quantityPlus;
+    if (existingProduct) {
+      quantityPlus = {
+        sepetim: currentUser.sepetim.map((item) =>
+        item.id === product.id ? {...item,adet:item.adet +1,toplamFiyat:item.fiyat*item.adet + item.fiyat}:item
+        )
+      }
+    }
+    const response = await axios.patch(
+      `http://localhost:3005/users/${userId}`,
+      quantityPlus
+    );
+    console.log(response.data);
+    dispatch(addCart(quantityPlus));
+  } catch (error) {
+    console.error("Bir hata oluştu:", error.message);
+  }
+}
+const quantityMinus = (userId, product) => async (dispatch) => {
+  try {
+    const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+    const currentUser = userResponse.data;
+    const existingProduct = currentUser.sepetim.find((item) => item.id === product.id);
+
+    let quantityMinus;
+    if (existingProduct && existingProduct.adet > 1) {
+      quantityMinus = {
+        sepetim: currentUser.sepetim.map((item) =>
+          item.id === product.id
+            ? { ...item, adet: item.adet - 1, toplamFiyat: item.fiyat * (item.adet - 1) }
+            : item
+        ),
+      };
+    }
+
+    const response = await axios.patch(`http://localhost:3005/users/${userId}`, quantityMinus);
+    console.log(response.data);
+    dispatch(addCart(quantityMinus));
+  } catch (error) {
+    console.error("Bir hata oluştu:", error.message);
+  }
+};
+
 
 export {
   getProduct,
@@ -138,4 +186,6 @@ export {
   login,
   logout,
   addToCart,
+  quantityPlus,
+  quantityMinus,
 };

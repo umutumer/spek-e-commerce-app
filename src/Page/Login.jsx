@@ -1,7 +1,7 @@
 import React, {  useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import {  login } from "../Redux/Action";
+import { getUser, login } from "../Redux/Action";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,7 +11,10 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(login(username, password));
+    dispatch(login(username, password))
+    .then(() => {
+      dispatch(getUser());
+    });
     navigate('/');
   };
 

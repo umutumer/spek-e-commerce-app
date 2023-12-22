@@ -9,6 +9,7 @@ import {
   upUser,
 } from "./UserSlice";
 import { addCart } from "./CartSlice";
+import { addFavorite } from "./FavoriteSlice";
 
 //Product
 const getProduct = () => async (dispatch) => {
@@ -103,20 +104,30 @@ const logout = (userId) => async (dispatch) => {
 
 const addToCart = (userId, product) => async (dispatch) => {
   try {
-    const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+    const userResponse = await axios.get(
+      `http://localhost:3005/users/${userId}`
+    );
     const currentUser = userResponse.data;
-    const existingProduct = currentUser.sepetim.find((item) => item.id === product.id)
+    const existingProduct = currentUser.sepetim.find(
+      (item) => item.id === product.id
+    );
     let updateCart;
     if (existingProduct) {
       updateCart = {
         sepetim: currentUser.sepetim.map((item) =>
-        item.id === product.id ? {...item,adet:item.adet +1 ,toplamFiyat: item.fiyat*item.adet +item.fiyat}:item
-        )
-      }
+          item.id === product.id
+            ? {
+                ...item,
+                adet: item.adet + 1,
+                toplamFiyat: item.fiyat * item.adet + item.fiyat,
+              }
+            : item
+        ),
+      };
     } else {
       updateCart = {
-        sepetim:[...currentUser.sepetim,{...product,adet:1}]
-      }
+        sepetim: [...currentUser.sepetim, { ...product, adet: 1 }],
+      };
     }
     const response = await axios.patch(
       `http://localhost:3005/users/${userId}`,
@@ -128,18 +139,28 @@ const addToCart = (userId, product) => async (dispatch) => {
     console.error("Bir hata oluştu:", error.message);
   }
 };
-const quantityPlus = (userId,product) => async (dispatch) => {
-  try{
-    const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+const quantityPlus = (userId, product) => async (dispatch) => {
+  try {
+    const userResponse = await axios.get(
+      `http://localhost:3005/users/${userId}`
+    );
     const currentUser = userResponse.data;
-    const existingProduct = currentUser.sepetim.find((item) => item.id === product.id)
+    const existingProduct = currentUser.sepetim.find(
+      (item) => item.id === product.id
+    );
     let quantityPlus;
     if (existingProduct) {
       quantityPlus = {
         sepetim: currentUser.sepetim.map((item) =>
-        item.id === product.id ? {...item,adet:item.adet +1,toplamFiyat:item.fiyat*item.adet + item.fiyat}:item
-        )
-      }
+          item.id === product.id
+            ? {
+                ...item,
+                adet: item.adet + 1,
+                toplamFiyat: item.fiyat * item.adet + item.fiyat,
+              }
+            : item
+        ),
+      };
     }
     const response = await axios.patch(
       `http://localhost:3005/users/${userId}`,
@@ -150,25 +171,36 @@ const quantityPlus = (userId,product) => async (dispatch) => {
   } catch (error) {
     console.error("Bir hata oluştu:", error.message);
   }
-}
+};
 const quantityMinus = (userId, product) => async (dispatch) => {
   try {
-    const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+    const userResponse = await axios.get(
+      `http://localhost:3005/users/${userId}`
+    );
     const currentUser = userResponse.data;
-    const existingProduct = currentUser.sepetim.find((item) => item.id === product.id);
+    const existingProduct = currentUser.sepetim.find(
+      (item) => item.id === product.id
+    );
 
     let quantityMinus;
     if (existingProduct && existingProduct.adet > 1) {
       quantityMinus = {
         sepetim: currentUser.sepetim.map((item) =>
           item.id === product.id
-            ? { ...item, adet: item.adet - 1, toplamFiyat: item.fiyat * (item.adet - 1) }
+            ? {
+                ...item,
+                adet: item.adet - 1,
+                toplamFiyat: item.fiyat * (item.adet - 1),
+              }
             : item
         ),
       };
     }
 
-    const response = await axios.patch(`http://localhost:3005/users/${userId}`, quantityMinus);
+    const response = await axios.patch(
+      `http://localhost:3005/users/${userId}`,
+      quantityMinus
+    );
     console.log(response.data);
     dispatch(addCart(quantityMinus));
   } catch (error) {
@@ -176,6 +208,43 @@ const quantityMinus = (userId, product) => async (dispatch) => {
   }
 };
 
+// Favorites
+
+const addFavorites = (userId, product) => async (dispatch) => {
+  const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+  const currentUser = userResponse.data;
+  let updateFavorite;
+  if (currentUser) {
+    updateFavorite = {
+      favoriler: [...currentUser.favoriler, { ...product}],
+    };
+  }
+  const response = await axios.patch(
+    `http://localhost:3005/users/${userId}`,
+    updateFavorite
+  );
+  dispatch(addFavorite(response.data));
+};
+
+const deleteFavorites = (userId,product) => async (dispatch) =>{
+  const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+  const currentUser = userResponse.data;
+  const existingProductIndex = currentUser.favoriler.findIndex(
+    (item) => item.id === product.id
+  );
+  console.log(existingProductIndex);
+  if (existingProductIndex !== -1) {
+    const updatedFavorites = currentUser.favoriler.filter(
+      (item ,index) => index !== existingProductIndex
+    );
+console.log(updatedFavorites);
+   const deleteFavorite = {
+      favoriler: updatedFavorites
+    }
+   const favoriteResponse = await axios.patch(`http://localhost:3005/users/${userId}`, deleteFavorite);
+   dispatch(deleteFavorite(favoriteResponse.data))
+  }
+}
 
 export {
   getProduct,
@@ -188,4 +257,6 @@ export {
   addToCart,
   quantityPlus,
   quantityMinus,
+  addFavorites,
+  deleteFavorites,
 };

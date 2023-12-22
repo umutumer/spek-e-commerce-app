@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../Components/Navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, getProduct, getUser } from "../Redux/Action";
-import { Navbar } from "flowbite-react";
+import {
+  addFavorites,
+  addToCart,
+  deleteFavorites,
+  getProduct,
+  getUser,
+} from "../Redux/Action";
+import { Button, Navbar } from "flowbite-react";
 import { setSearchQuery } from "../Redux/SearchSlice";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,6 +23,9 @@ const Home = () => {
     ? users.find((user) => user.isLogin)
     : null;
   const UserId = loggedInUser ? loggedInUser.id : null;
+  const userFavorite = loggedInUser ? loggedInUser.favoriler : null;
+  console.log(userFavorite);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Tüm Ürünler");
 
@@ -53,21 +63,35 @@ const Home = () => {
     setIsMenuOpen(false);
     dispatch(setSearchQuery(""));
   };
-  const handleAddToCart = (product) =>{
-      if (UserId) {
-        dispatch(addToCart(UserId,product))
-        toast.success('Sepete Eklendi!', {
-          position: "bottom-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          });
-      }
-  }
+  const handleAddToCart = (product) => {
+    if (UserId) {
+      dispatch(addToCart(UserId, product));
+      toast.success("Sepete Eklendi!", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+  };
+  const handleAddToFavorite = (product) => {
+    if (UserId) {
+      dispatch(addFavorites(UserId, product)).then(() => {
+        dispatch(getUser());
+      });
+    }
+  };
+  const handleDeleteToFavorite = (product) => {
+    if (UserId) {
+      dispatch(deleteFavorites(UserId, product)).then(() => {
+        dispatch(getUser());
+      });
+    }
+  };
   useEffect(() => {
     dispatch(getProduct());
     dispatch(getUser());
@@ -116,10 +140,28 @@ const Home = () => {
             </Link>
             <div className="w-full flex justify-center">
               <button
-              onClick={()=> handleAddToCart(prod)}
-               className="bg-orange-500 text-white w-48 h-7 rounded-xl m-0.5 dark:bg-blue-600">
+                onClick={() => handleAddToCart(prod)}
+                className="bg-orange-500 text-white w-48 h-7 rounded-xl m-0.5 dark:bg-blue-600"
+              >
                 Sepete Ekle
               </button>
+            </div>
+            <div>
+              {userFavorite && userFavorite.map((favorite, index) => (
+                <div key={index} className="absolute top-2 right-2">
+                  {" "}
+                  {favorite.id === prod.id && (
+                    <button onClick={() => handleDeleteToFavorite(prod)}>
+                      <FaHeart className="text-orange-500 dark:text-blue-500 text-xl z-30" />
+                    </button>
+                  )}{" "}
+                </div>
+              ))}
+              <div className="absolute top-2 right-2">
+                <button onClick={() => handleAddToFavorite(prod)}>
+                  <FaRegHeart className="text-orange-500 dark:text-blue-500 text-xl z-30" />
+                </button>
+              </div>
             </div>
           </div>
         ))}

@@ -3,6 +3,8 @@ import productReducer from "./ProductSlice";
 import SearchReducer from "./SearchSlice";
 import UserReducer from "./UserSlice";
 import CartReducer from "./CartSlice";
+import FavoriteReducer from "./FavoriteSlice";
+
 
 
 const store = configureStore({
@@ -11,6 +13,7 @@ const store = configureStore({
         search:SearchReducer,
         users: UserReducer,
         cart: CartReducer,
+        favorite: FavoriteReducer,
     },
 });
 

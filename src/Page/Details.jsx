@@ -25,7 +25,6 @@ const Details = () => {
       dispatch(addToCart(UserId,product))
     }
 }
-console.log(useSelector((state) => state.users));
 useEffect(() => {
   dispatch(getProduct());
   dispatch(getUser());

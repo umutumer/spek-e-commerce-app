@@ -9,7 +9,7 @@ import {
   upUser,
 } from "./UserSlice";
 import { addCart } from "./CartSlice";
-import { addFavorite } from "./FavoriteSlice";
+import { addFavorite, delFavorite } from "./FavoriteSlice";
 
 //Product
 const getProduct = () => async (dispatch) => {
@@ -216,7 +216,7 @@ const addFavorites = (userId, product) => async (dispatch) => {
   let updateFavorite;
   if (currentUser) {
     updateFavorite = {
-      favoriler: [...currentUser.favoriler, { ...product}],
+      favoriler: [...currentUser.favoriler, { ...product }],
     };
   }
   const response = await axios.patch(
@@ -226,25 +226,20 @@ const addFavorites = (userId, product) => async (dispatch) => {
   dispatch(addFavorite(response.data));
 };
 
-const deleteFavorites = (userId,product) => async (dispatch) =>{
-  const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+const deleteFavorites = (UserId, product) => async (dispatch) => {
+  const userResponse = await axios.get(`http://localhost:3005/users/${UserId}`);
   const currentUser = userResponse.data;
-  const existingProductIndex = currentUser.favoriler.findIndex(
-    (item) => item.id === product.id
+  const updatedFavorites = currentUser.favoriler.filter(
+    (item) => item.id !== product.id
   );
-  console.log(existingProductIndex);
-  if (existingProductIndex !== -1) {
-    const updatedFavorites = currentUser.favoriler.filter(
-      (item ,index) => index !== existingProductIndex
-    );
-console.log(updatedFavorites);
-   const deleteFavorite = {
-      favoriler: updatedFavorites
-    }
-   const favoriteResponse = await axios.patch(`http://localhost:3005/users/${userId}`, deleteFavorite);
-   dispatch(deleteFavorite(favoriteResponse.data))
-  }
-}
+  console.log(product);
+
+  const response = await axios.patch(`http://localhost:3005/users/${UserId}`, {
+    favoriler: updatedFavorites,
+  });
+
+  dispatch(delFavorite(response.data));
+};
 
 export {
   getProduct,

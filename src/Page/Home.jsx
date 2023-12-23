@@ -147,21 +147,27 @@ const Home = () => {
               </button>
             </div>
             <div>
-              {userFavorite && userFavorite.map((favorite, index) => (
-                <div key={index} className="absolute top-2 right-2">
-                  {" "}
-                  {favorite.id === prod.id && (
-                    <button onClick={() => handleDeleteToFavorite(prod)}>
-                      <FaHeart className="text-orange-500 dark:text-blue-500 text-xl z-30" />
-                    </button>
-                  )}{" "}
+            {userFavorite && userFavorite.length > 0 ? (
+                userFavorite.map((favorite, index) => (
+                  <div key={index} className="absolute top-2 right-2">
+                    {favorite.id === prod.id ? (
+                      <button onClick={() => handleDeleteToFavorite(prod)}>
+                        <FaHeart className="text-orange-500 dark:text-blue-500 text-xl z-30" />
+                      </button>
+                    ) : (
+                      <button onClick={() => handleAddToFavorite(prod)}>
+                        <FaRegHeart className="text-orange-500 dark:text-blue-500 text-xl z-30" />
+                      </button>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <div className="absolute top-2 right-2">
+                  <button onClick={() => handleAddToFavorite(prod)}>
+                    <FaRegHeart className="text-orange-500 dark:text-blue-500 text-xl z-30" />
+                  </button>
                 </div>
-              ))}
-              <div className="absolute top-2 right-2">
-                <button onClick={() => handleAddToFavorite(prod)}>
-                  <FaRegHeart className="text-orange-500 dark:text-blue-500 text-xl z-30" />
-                </button>
-              </div>
+              )}
             </div>
           </div>
         ))}

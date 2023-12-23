@@ -409,7 +409,32 @@
       "kullaniciAdi": "umutumer",
       "mail": "utumer6@gmail.com",
       "sifre": "password123",
-      "favoriler": [],
+      "favoriler": [
+        {
+          "id": 4,
+          "urunAdi": "Gözlük",
+          "fiyat": 50,
+          "renk": "Mavi",
+          "kategori": "Kadın",
+          "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg"
+        },
+        {
+          "id": 6,
+          "urunAdi": "Gömlek",
+          "fiyat": 80,
+          "renk": "Mavi",
+          "kategori": "Erkek",
+          "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg"
+        },
+        {
+          "id": 9,
+          "urunAdi": "SweatShirt",
+          "fiyat": 30,
+          "renk": "Kahverengi",
+          "kategori": "Erkek",
+          "resim": "https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/pim/productimages/20232/6896525/v1/l_20232-w3hs46z8-vc8-92-74-89-188_a.jpg"
+        }
+      ],
       "sepetim": [
         {
           "id": 50,
@@ -469,6 +494,26 @@
           "kategori": "Erkek",
           "resim": "https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg",
           "adet": 1
+        },
+        {
+          "id": 11,
+          "urunAdi": "Bebek Body",
+          "fiyat": 25,
+          "renk": "Pembe",
+          "kategori": "AnneCocuk",
+          "resim": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85,format=auto/13027/uploads/urunresimleri/buyuk/deniz-canlilari-baskili-beyaz-unisex-b-e2379f.jpg",
+          "adet": 1,
+          "toplamFiyat": 25
+        },
+        {
+          "id": 48,
+          "urunAdi": "Gaming Laptop",
+          "fiyat": 1200,
+          "marka": "MSI",
+          "kategori": "CokSatanlar",
+          "resim": "https://www.gaming.gen.tr/wp-content/uploads/2023/03/msi-pulse-15-b13vfk-498tr-intel-core-i7-13700h-32gb-1tb-ssd-rtx4060-15-6-inc-144hz-full-hd-w11-gaming-laptop-y.jpg",
+          "adet": 1,
+          "toplamFiyat": 1200
         }
       ],
       "status": "Admin",

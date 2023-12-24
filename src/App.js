@@ -8,6 +8,7 @@ import UserInformation from './Page/UserInformation';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './Page/Cart';
+import Favorites from './Page/Favorites';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='/details/:id' element={<Details />} />
       <Route path='/userinformation' element={<UserInformation />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/favorites' element={<Favorites />} />
     </Routes>
     </BrowserRouter>
   );

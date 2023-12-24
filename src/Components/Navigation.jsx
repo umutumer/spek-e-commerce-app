@@ -97,7 +97,7 @@ const Navigation = () => {
             Giriş Yap
           </button>
         )}
-        <button className="flex items-center mx-2 hover:text-orange-500 duration-200 text-black dark:text-white font-medium dark:hover:text-blue-600 ">
+        <button onClick={() => navigate('/favorites')} className="flex items-center mx-2 hover:text-orange-500 duration-200 text-black dark:text-white font-medium dark:hover:text-blue-600 ">
           <MdFavorite className="mr-1" />
           Favorilerim
         </button>

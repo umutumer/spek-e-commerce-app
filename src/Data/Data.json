@@ -411,14 +411,6 @@
       "sifre": "password123",
       "favoriler": [
         {
-          "id": 4,
-          "urunAdi": "Gözlük",
-          "fiyat": 50,
-          "renk": "Mavi",
-          "kategori": "Kadın",
-          "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg"
-        },
-        {
           "id": 6,
           "urunAdi": "Gömlek",
           "fiyat": 80,
@@ -427,12 +419,36 @@
           "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg"
         },
         {
+          "id": 7,
+          "urunAdi": "Pantolon",
+          "fiyat": 90,
+          "renk": "Siyah",
+          "kategori": "Erkek",
+          "resim": "https://cdn.dsmcdn.com/ty996/product/media/images/prod/SPM/PIM/20230909/20/9c831f8d-668c-3d3b-a2eb-3b9c0680fac5/1_org_zoom.jpg"
+        },
+        {
           "id": 9,
           "urunAdi": "SweatShirt",
           "fiyat": 30,
           "renk": "Kahverengi",
           "kategori": "Erkek",
           "resim": "https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/pim/productimages/20232/6896525/v1/l_20232-w3hs46z8-vc8-92-74-89-188_a.jpg"
+        },
+        {
+          "id": 8,
+          "urunAdi": "Ceket",
+          "fiyat": 120,
+          "renk": "Gri",
+          "kategori": "Erkek",
+          "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg"
+        },
+        {
+          "id": 20,
+          "urunAdi": "Masa Lambası",
+          "fiyat": 50,
+          "renk": "Altın",
+          "kategori": "EvYasam",
+          "resim": "https://cdn.dsmcdn.com/ty826/product/media/images/20230414/16/324686757/853264521/7/7_org_zoom.jpg"
         }
       ],
       "sepetim": [
@@ -514,6 +530,15 @@
           "resim": "https://www.gaming.gen.tr/wp-content/uploads/2023/03/msi-pulse-15-b13vfk-498tr-intel-core-i7-13700h-32gb-1tb-ssd-rtx4060-15-6-inc-144hz-full-hd-w11-gaming-laptop-y.jpg",
           "adet": 1,
           "toplamFiyat": 1200
+        },
+        {
+          "id": 8,
+          "urunAdi": "Ceket",
+          "fiyat": 120,
+          "renk": "Gri",
+          "kategori": "Erkek",
+          "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg",
+          "adet": 1
         }
       ],
       "status": "Admin",

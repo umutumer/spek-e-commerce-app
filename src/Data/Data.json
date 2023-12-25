@@ -441,37 +441,9 @@
           "renk": "Gri",
           "kategori": "Erkek",
           "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg"
-        },
-        {
-          "id": 20,
-          "urunAdi": "Masa Lambası",
-          "fiyat": 50,
-          "renk": "Altın",
-          "kategori": "EvYasam",
-          "resim": "https://cdn.dsmcdn.com/ty826/product/media/images/20230414/16/324686757/853264521/7/7_org_zoom.jpg"
         }
       ],
       "sepetim": [
-        {
-          "id": 50,
-          "urunAdi": "Robot Süpürge",
-          "fiyat": 200,
-          "marka": "iRobot",
-          "kategori": "CokSatanlar",
-          "resim": "https://cdn.akakce.com/irobot/irobot-roomba-i7-plus-7550-z.jpg",
-          "adet": 1,
-          "toplamFiyat": 200
-        },
-        {
-          "id": 5,
-          "urunAdi": "Şort",
-          "fiyat": 100,
-          "renk": "Yeşil",
-          "kategori": "Kadın",
-          "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
-          "adet": 1,
-          "toplamFiyat": 100
-        },
         {
           "id": 6,
           "urunAdi": "Gömlek",
@@ -479,8 +451,8 @@
           "renk": "Mavi",
           "kategori": "Erkek",
           "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
-          "adet": 1,
-          "toplamFiyat": 80
+          "adet": 2,
+          "toplamFiyat": 160
         },
         {
           "id": 4,
@@ -512,16 +484,6 @@
           "adet": 1
         },
         {
-          "id": 11,
-          "urunAdi": "Bebek Body",
-          "fiyat": 25,
-          "renk": "Pembe",
-          "kategori": "AnneCocuk",
-          "resim": "https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85,format=auto/13027/uploads/urunresimleri/buyuk/deniz-canlilari-baskili-beyaz-unisex-b-e2379f.jpg",
-          "adet": 1,
-          "toplamFiyat": 25
-        },
-        {
           "id": 48,
           "urunAdi": "Gaming Laptop",
           "fiyat": 1200,
@@ -541,6 +503,7 @@
           "adet": 1
         }
       ],
+      "siparislerim": [],
       "status": "Admin",
       "isLogin": true
     },
@@ -596,6 +559,7 @@
           "adet": 1
         }
       ],
+      "siparislerim": [],
       "status": "Uye",
       "isLogin": false
     }

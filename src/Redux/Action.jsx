@@ -8,7 +8,7 @@ import {
   setUserField,
   upUser,
 } from "./UserSlice";
-import { addCart } from "./CartSlice";
+import { addCart, removeCart } from "./CartSlice";
 import { addFavorite, delFavorite } from "./FavoriteSlice";
 
 //Product
@@ -208,6 +208,19 @@ const quantityMinus = (userId, product) => async (dispatch) => {
   }
 };
 
+const removeFromCart = (userId,product) => async (dispatch) =>{
+  try{
+    const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+    const currentUser = userResponse.data;
+    const removeProduct = currentUser.sepetim.filter((item) => item.id !== product.id);
+
+    const response = await axios.patch(`http://localhost:3005/users/${userId}` , {sepetim: removeProduct})
+    dispatch(removeCart(response.data))
+  } catch(error){
+    console.error('Ürün Sepetten silinirken hata oluştu',error);
+  }
+}
+
 // Favorites
 
 const addFavorites = (userId, product) => async (dispatch) => {
@@ -252,6 +265,7 @@ export {
   addToCart,
   quantityPlus,
   quantityMinus,
+  removeFromCart,
   addFavorites,
   deleteFavorites,
 };

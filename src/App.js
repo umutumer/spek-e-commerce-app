@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './Page/Cart';
 import Favorites from './Page/Favorites';
+import Payment from './Page/Payment';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/userinformation' element={<UserInformation />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/favorites' element={<Favorites />} />
+      <Route path='/payment' element={<Payment />} />
     </Routes>
     </BrowserRouter>
   );

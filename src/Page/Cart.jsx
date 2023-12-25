@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import Navigation from "../Components/Navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser, quantityMinus, quantityPlus } from "../Redux/Action";
+import { getUser, quantityMinus, quantityPlus, removeFromCart } from "../Redux/Action";
 import { FaPlusCircle } from "react-icons/fa";
-import { FaCircleMinus } from "react-icons/fa6";
+import { FaCircleMinus , FaTrash  } from "react-icons/fa6";
+import { useNavigate } from "react-router";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const users = useSelector((state) => state.users);
   const loggedInUser = Array.isArray(users)
     ? users.find((user) => user.isLogin)
@@ -42,7 +44,11 @@ const Cart = () => {
       });
     }
   };
-
+ const handleRemoveFromCart = (product) =>{
+   UserId && dispatch(removeFromCart(UserId,product)).then(() => {
+    dispatch(getUser())
+   })
+ }
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
@@ -60,6 +66,7 @@ const Cart = () => {
                 <th>Ürün Renk & Marka</th>
                 <th>Ürün Adeti</th>
                 <th>Toplam Fiyat</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -105,6 +112,7 @@ const Cart = () => {
                     ) : (
                       <td>{product.fiyat}₺</td>
                     )}
+                    <td><button className="p-1 text-red-600" onClick={() => handleRemoveFromCart(product)}><FaTrash /></button></td>
                   </tr>
                 ))}
             </tbody>
@@ -116,7 +124,7 @@ const Cart = () => {
             <p className="p-1 w-full text-center text-xl mb-2">
               {totalAmount}₺
             </p>
-            <button className="my-2 p-1 w-[90%] bg-orange-500 dark:bg-blue-600 rounded text-lg text-white ">
+            <button onClick={() => navigate('/payment')} className="my-2 p-1 w-[90%] bg-orange-500 dark:bg-blue-600 rounded text-lg text-white ">
               Sepeti Onayla
             </button>
           </div>

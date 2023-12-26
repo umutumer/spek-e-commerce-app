@@ -4,6 +4,7 @@ import SearchReducer from "./SearchSlice";
 import UserReducer from "./UserSlice";
 import CartReducer from "./CartSlice";
 import FavoriteReducer from "./FavoriteSlice";
+import OrderReducer from "./OrderSlice";
 
 
 
@@ -14,6 +15,7 @@ const store = configureStore({
         users: UserReducer,
         cart: CartReducer,
         favorite: FavoriteReducer,
+        order: OrderReducer,
     },
 });
 

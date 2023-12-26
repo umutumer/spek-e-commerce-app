@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navigation from "../Components/Navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser, quantityMinus, quantityPlus, removeFromCart } from "../Redux/Action";
+import { getUser, quantityMinus, quantityPlus, removeFromCart, resetCart } from "../Redux/Action";
 import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus , FaTrash  } from "react-icons/fa6";
 import { useNavigate } from "react-router";
@@ -112,7 +112,7 @@ const Cart = () => {
                     ) : (
                       <td>{product.fiyat}₺</td>
                     )}
-                    <td><button className="p-1 text-red-600" onClick={() => handleRemoveFromCart(product)}><FaTrash /></button></td>
+                    <td><button className="p-1 text-orange-500 dark:text-blue-600" onClick={() => handleRemoveFromCart(product)}><FaTrash /></button></td>
                   </tr>
                 ))}
             </tbody>
@@ -126,6 +126,9 @@ const Cart = () => {
             </p>
             <button onClick={() => navigate('/payment')} className="my-2 p-1 w-[90%] bg-orange-500 dark:bg-blue-600 rounded text-lg text-white ">
               Sepeti Onayla
+            </button>
+            <button onClick={() => resetCart(UserId)} className="my-2 p-1 w-[90%] bg-orange-500 dark:bg-blue-600 rounded text-lg text-white ">
+              reset cart
             </button>
           </div>
         </div>

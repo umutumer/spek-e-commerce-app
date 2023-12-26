@@ -52,7 +52,7 @@ const UserInformation = () => {
                 </span>
                 {loggedInUser.mail}
               </p>
-              {loggedInUser.telno ? (
+              {loggedInUser.telNo ? (
                 <p className="text-xl mb-1">
                   <span className="text-orange-500 dark:text-blue-600">
                     Telefon Numarası:{" "}

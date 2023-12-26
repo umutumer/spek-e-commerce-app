@@ -504,8 +504,10 @@
         }
       ],
       "siparislerim": [],
+      "telNo": 5555545555,
+      "adres": "adres",
       "status": "Admin",
-      "isLogin": true
+      "isLogin": false
     },
     {
       "id": 101,
@@ -560,8 +562,34 @@
         }
       ],
       "siparislerim": [],
+      "telNo": 5555555555,
+      "adres": "adres",
       "status": "Uye",
       "isLogin": false
+    },
+    {
+      "kullaniciAdi": "deneme",
+      "mail": "deneme@gmail.com",
+      "sepetim": [
+        {
+          "id": 5,
+          "urunAdi": "Şort",
+          "fiyat": 100,
+          "renk": "Yeşil",
+          "kategori": "Kadın",
+          "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
+          "adet": 2,
+          "toplamFiyat": 200
+        }
+      ],
+      "favoriler": [],
+      "siparislerim": [],
+      "telNo": 5123123131,
+      "adres": "deneme adres",
+      "sifre": "pass1234",
+      "status": "Uye",
+      "isLogin": true,
+      "id": 102
     }
   ]
 }

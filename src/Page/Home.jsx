@@ -24,7 +24,6 @@ const Home = () => {
     : null;
   const UserId = loggedInUser ? loggedInUser.id : null;
   const userFavorite = loggedInUser ? loggedInUser.favoriler : null;
-  console.log(userFavorite);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Tüm Ürünler");

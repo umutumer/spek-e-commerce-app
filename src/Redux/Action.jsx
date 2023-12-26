@@ -8,8 +8,9 @@ import {
   setUserField,
   upUser,
 } from "./UserSlice";
-import { addCart, removeCart } from "./CartSlice";
+import { addCart, removeCart, resCart } from "./CartSlice";
 import { addFavorite, delFavorite } from "./FavoriteSlice";
+import { addOrder } from "./OrderSlice";
 
 //Product
 const getProduct = () => async (dispatch) => {
@@ -41,21 +42,37 @@ const updateUser = (userId, newUser) => async (dispatch) => {
     console.error("Kullanıcı bilgileri güncellenirken hata oluştu:", error);
   }
 };
-const registerUser = (kullaniciAdi, mail, sifre) => async (dispatch) => {
-  try {
-    const response = await axios.post("http://localhost:3005/users", {
-      kullaniciAdi,
-      mail,
-      sifre,
-    });
-    console.log(response);
-    dispatch(setUserField({ field: "kullaniciAdi", value: kullaniciAdi }));
-    dispatch(setUserField({ field: "mail", value: mail }));
-    dispatch(setUserField({ field: "sifre", value: sifre }));
-  } catch (error) {
-    console.error("Kayıt edilirken hata oluştu:", error);
-  }
-};
+const registerUser =
+  (kullaniciAdi, mail, sepetim, favoriler, siparislerim , telNo, adres, sifre,status,isLogin) =>
+  async (dispatch) => {
+    try {
+      const response = await axios.post("http://localhost:3005/users", {
+        kullaniciAdi,
+        mail,
+        sepetim,
+        favoriler,
+        siparislerim,
+        telNo,
+        adres,
+        sifre,
+        status,
+        isLogin,
+      });
+      console.log(response);
+      dispatch(setUserField({ field: "kullaniciAdi", value: kullaniciAdi }));
+      dispatch(setUserField({ field: "mail", value: mail }));
+      dispatch(setUserField({ field: "sepetim", value: sepetim }));
+      dispatch(setUserField({ field: "favoriler", value: favoriler }));
+      dispatch(setUserField({ field: "siparislerim", value: siparislerim }));
+      dispatch(setUserField({ field: "telNo", value: telNo }));
+      dispatch(setUserField({ field: "adres", value: adres }));
+      dispatch(setUserField({ field: "sifre", value: sifre }));
+      dispatch(setUserField({ field: "status", value: status }));
+      dispatch(setUserField({ field: "isLogin", value: isLogin }));
+    } catch (error) {
+      console.error("Kayıt edilirken hata oluştu:", error);
+    }
+  };
 const deleteUser = (userId) => async (dispatch) => {
   try {
     const response = await axios.delete(
@@ -208,16 +225,33 @@ const quantityMinus = (userId, product) => async (dispatch) => {
   }
 };
 
-const removeFromCart = (userId,product) => async (dispatch) =>{
-  try{
-    const userResponse = await axios.get(`http://localhost:3005/users/${userId}`);
+const removeFromCart = (userId, product) => async (dispatch) => {
+  try {
+    const userResponse = await axios.get(
+      `http://localhost:3005/users/${userId}`
+    );
     const currentUser = userResponse.data;
-    const removeProduct = currentUser.sepetim.filter((item) => item.id !== product.id);
+    const removeProduct = currentUser.sepetim.filter(
+      (item) => item.id !== product.id
+    );
 
-    const response = await axios.patch(`http://localhost:3005/users/${userId}` , {sepetim: removeProduct})
-    dispatch(removeCart(response.data))
+    const response = await axios.patch(
+      `http://localhost:3005/users/${userId}`,
+      { sepetim: removeProduct }
+    );
+    dispatch(removeCart(response.data));
+  } catch (error) {
+    console.error("Ürün Sepetten silinirken hata oluştu", error);
+  }
+};
+const resetCart = (UserId) => async (dispatch) =>{
+  try{
+    const response = await axios.patch(
+      `http://localhost:3005/users/${UserId}`,{ sepetim: [] }
+    );
+    dispatch(resCart(response.data));
   } catch(error){
-    console.error('Ürün Sepetten silinirken hata oluştu',error);
+    console.error("sepet sıfırlanırken hata oluştu",error);
   }
 }
 
@@ -254,6 +288,25 @@ const deleteFavorites = (UserId, product) => async (dispatch) => {
   dispatch(delFavorite(response.data));
 };
 
+//Payment 
+
+const paymentConfirm = (UserId,Cart) => async (dispatch) =>{
+  try{
+    const userResponse = await axios.get(`http://localhost:3005/users/${UserId}`);
+    const currentUser = userResponse.data;
+    let addOrder;
+    if (currentUser) {
+      addOrder = {
+        siparislerim: [...currentUser.siparislerim,{Cart}]
+      }
+    }
+    const response = await axios.patch(`http://localhost:3005/users/${UserId}` , addOrder);
+    dispatch(addOrder(response.data));
+  } catch(error){
+    console.error("sipariş verilirken bir hata oluştu",error);
+  }
+}
+
 export {
   getProduct,
   registerUser,
@@ -266,6 +319,8 @@ export {
   quantityPlus,
   quantityMinus,
   removeFromCart,
+  resetCart,
   addFavorites,
   deleteFavorites,
+  paymentConfirm,
 };

@@ -250,6 +250,7 @@ const resetCart = (UserId) => async (dispatch) =>{
       `http://localhost:3005/users/${UserId}`,{ sepetim: [] }
     );
     dispatch(resCart(response.data));
+    console.log(response.data);
   } catch(error){
     console.error("sepet sıfırlanırken hata oluştu",error);
   }
@@ -294,13 +295,14 @@ const paymentConfirm = (UserId,Cart) => async (dispatch) =>{
   try{
     const userResponse = await axios.get(`http://localhost:3005/users/${UserId}`);
     const currentUser = userResponse.data;
-    let addOrder;
+    let addOrderr;
     if (currentUser) {
-      addOrder = {
-        siparislerim: [...currentUser.siparislerim,{Cart}]
+      addOrderr = {
+        siparislerim: [...currentUser.siparislerim,{siparis:{ürünler:Cart ,siparisDurumu: 'Beklemede'}}],
+        
       }
     }
-    const response = await axios.patch(`http://localhost:3005/users/${UserId}` , addOrder);
+    const response = await axios.patch(`http://localhost:3005/users/${UserId}` , addOrderr);
     dispatch(addOrder(response.data));
   } catch(error){
     console.error("sipariş verilirken bir hata oluştu",error);

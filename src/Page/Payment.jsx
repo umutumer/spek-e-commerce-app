@@ -35,7 +35,7 @@ const Payment = () => {
   };
   const handlePaymentConfirm = () =>{
        dispatch(paymentConfirm(UserId,Cart));
-       resetCart(UserId);
+      dispatch(resetCart(UserId));
        navigate("/")
   }
   return (
@@ -57,7 +57,8 @@ const Payment = () => {
                   />
                   <div className="mr-1">
                     <p>{c.urunAdi}</p>
-                    {c.adet === 1 ? <p>{c.fiyat}₺</p> : <p>{c.toplamFiyat}₺</p>}
+                    {c.adet === 1 ? <p>Fiyat:{c.fiyat}₺</p> : <p>Fiyat:{c.toplamFiyat}₺</p>}
+                    <p>Adet:{c.adet}</p>
                   </div>
                   <button
                     className="p-1 text-orange-500 dark:text-blue-600 absolute top-0 right-0"

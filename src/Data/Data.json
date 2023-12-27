@@ -570,20 +570,110 @@
     {
       "kullaniciAdi": "deneme",
       "mail": "deneme@gmail.com",
-      "sepetim": [
+      "sepetim": [],
+      "favoriler": [
         {
-          "id": 5,
-          "urunAdi": "Şort",
-          "fiyat": 100,
-          "renk": "Yeşil",
+          "id": 3,
+          "urunAdi": "Ayakkabı",
+          "fiyat": 120,
+          "renk": "Kırmızı",
           "kategori": "Kadın",
-          "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
-          "adet": 2,
-          "toplamFiyat": 200
+          "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg"
+        },
+        {
+          "id": 2,
+          "urunAdi": "Çanta",
+          "fiyat": 80,
+          "renk": "Beyaz",
+          "kategori": "Kadın",
+          "resim": "https://www.im-polo.com/wp-content/uploads/2022/10/impolo-beti-omuz-beyaz-taba-kadin-canta-788.jpg"
+        },
+        {
+          "id": 17,
+          "urunAdi": "Mutfak Tencere Seti",
+          "fiyat": 120,
+          "renk": "Gümüş",
+          "kategori": "EvYasam",
+          "resim": "https://cdn.karaca.com/image/cdndata/182/202209/600.15.01.2574/8699343501156-4.jpg"
         }
       ],
-      "favoriler": [],
-      "siparislerim": [],
+      "siparislerim": [
+        {
+          "siparis": {
+            "ürünler": [
+              {
+                "id": 3,
+                "urunAdi": "Ayakkabı",
+                "fiyat": 120,
+                "renk": "Kırmızı",
+                "kategori": "Kadın",
+                "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
+                "adet": 1
+              },
+              {
+                "id": 4,
+                "urunAdi": "Gözlük",
+                "fiyat": 50,
+                "renk": "Mavi",
+                "kategori": "Kadın",
+                "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
+                "adet": 1
+              }
+            ],
+            "siparisDurumu": "Beklemede"
+          }
+        },
+        {
+          "siparis": {
+            "ürünler": [
+              {
+                "id": 3,
+                "urunAdi": "Ayakkabı",
+                "fiyat": 120,
+                "renk": "Kırmızı",
+                "kategori": "Kadın",
+                "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
+                "adet": 1
+              },
+              {
+                "id": 4,
+                "urunAdi": "Gözlük",
+                "fiyat": 50,
+                "renk": "Mavi",
+                "kategori": "Kadın",
+                "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
+                "adet": 1
+              }
+            ],
+            "siparisDurumu": "Beklemede"
+          }
+        },
+        {
+          "siparis": {
+            "ürünler": [
+              {
+                "id": 5,
+                "urunAdi": "Şort",
+                "fiyat": 100,
+                "renk": "Yeşil",
+                "kategori": "Kadın",
+                "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
+                "adet": 1
+              },
+              {
+                "id": 4,
+                "urunAdi": "Gözlük",
+                "fiyat": 50,
+                "renk": "Mavi",
+                "kategori": "Kadın",
+                "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
+                "adet": 1
+              }
+            ],
+            "siparisDurumu": "Beklemede"
+          }
+        }
+      ],
       "telNo": 5123123131,
       "adres": "deneme adres",
       "sifre": "pass1234",

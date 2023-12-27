@@ -73,7 +73,7 @@ const Navigation = () => {
             <Link to='/userinformation' className="w-full py-1 border-b dark:border-slate-700 text-center">
               Kullanıcı Bilgilerim
             </Link>
-            <Link className="w-full py-1 border-b dark:border-slate-700 text-center">
+            <Link to={'/myorders'} className="w-full py-1 border-b dark:border-slate-700 text-center">
               Siparişlerim
             </Link>
             {loggedInUser.status === "Admin" && (

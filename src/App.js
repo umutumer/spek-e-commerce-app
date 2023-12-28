@@ -11,6 +11,7 @@ import Cart from './Page/Cart';
 import Favorites from './Page/Favorites';
 import Payment from './Page/Payment';
 import MyOrders from './Page/MyOrders';
+import AdminHome from './Page/AdminHome';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path='/favorites' element={<Favorites />} />
       <Route path='/payment' element={<Payment />} />
       <Route path='/myorders' element={<MyOrders />} />
+      <Route path='/admin' element={<AdminHome />} />
     </Routes>
     </BrowserRouter>
   );

@@ -69,7 +69,7 @@ const Navigation = () => {
             Hesabım
           </button>
           {isDropdownOpen && (
-          <div className="w-40 absolute top-8 -left-6 flex flex-col items-center bg-white dark:bg-slate-900 dark:text-white border-2 dark:border-slate-700 rounded z-50 ">
+          <div className="w-40 absolute top-8 -left-6 flex flex-col items-center bg-white dark:bg-slate-900 dark:text-white border-2 dark:border-slate-700 rounded z-50 duration-300 ">
             <Link to='/userinformation' className="w-full py-1 border-b dark:border-slate-700 text-center">
               Kullanıcı Bilgilerim
             </Link>
@@ -77,7 +77,7 @@ const Navigation = () => {
               Siparişlerim
             </Link>
             {loggedInUser.status === "Admin" && (
-              <Link className="w-full py-1 border-b dark:border-slate-700 text-center">Admin</Link>
+              <Link to='/admin' className="w-full py-1 border-b dark:border-slate-700 text-center">Admin</Link>
             )}
             <button
             onClick={() => dispatch(logout(loggedInUser.id))}

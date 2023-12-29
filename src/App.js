@@ -12,6 +12,7 @@ import Favorites from './Page/Favorites';
 import Payment from './Page/Payment';
 import MyOrders from './Page/MyOrders';
 import AdminHome from './Page/AdminHome';
+import AdminProduct from './Page/AdminProduct';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path='/payment' element={<Payment />} />
       <Route path='/myorders' element={<MyOrders />} />
       <Route path='/admin' element={<AdminHome />} />
+      <Route path='/admin/product' element={<AdminProduct />} />
     </Routes>
     </BrowserRouter>
   );

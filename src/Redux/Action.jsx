@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setProduct } from "./ProductSlice";
+import { delProduct, setProduct, setProductField, upProduct } from "./ProductSlice";
 import {
   delUser,
   loginUser,
@@ -22,6 +22,44 @@ const getProduct = () => async (dispatch) => {
   }
 };
 
+const updateProduct = ({productId, newProduct}) => async (dispatch) => {
+  try{
+    const response = await axios.patch(`http://localhost:3005/product/${productId}` , newProduct);
+    dispatch(upProduct(response.data));
+  }catch (error) {
+    console.error("Ürün bilgileri güncellenirken hata oluştu:", error);
+  }
+};
+const deleteProduct = (productId) => async (dispatch) =>{
+  try{
+    const response = await axios.delete(`http://localhost:3005/product/${productId}`);
+    dispatch(delProduct(response.data));
+  }catch (error) {
+    console.error("Ürün silinirken hata oluştu:", error);
+  }
+};
+const createProduct = (urunAdi,fiyat,renk,kategori,resim,urunaciklama,marka) => async (dispatch) =>{
+  try{
+    const response = await axios.post("http://localhost:3005/product",{
+      urunAdi,
+      fiyat,
+      renk,
+      kategori,
+      resim,
+      urunaciklama,
+      marka,
+    });
+    dispatch(setProductField({field:urunAdi, value:urunAdi}))
+    dispatch(setProductField({field:fiyat, value:fiyat}))
+    dispatch(setProductField({field:renk, value:renk}))
+    dispatch(setProductField({field:kategori, value:kategori}))
+    dispatch(setProductField({field:resim, value:resim}))
+    dispatch(setProductField({field:urunaciklama, value:urunaciklama}))
+    dispatch(setProductField({field:marka, value:marka}))
+  } catch (error) {
+    console.error("Ürün eklenirken hata oluştu:", error);
+  }
+}
 //User
 const getUser = () => async (dispatch) => {
   try {
@@ -33,7 +71,7 @@ const getUser = () => async (dispatch) => {
 };
 const updateUser = (userId, newUser) => async (dispatch) => {
   try {
-    const response = await axios.put(
+    const response = await axios.patch(
       `http://localhost:3005/users/${userId}`,
       newUser
     );
@@ -311,6 +349,9 @@ const paymentConfirm = (UserId,Cart) => async (dispatch) =>{
 
 export {
   getProduct,
+  updateProduct,
+  deleteProduct,
+  createProduct,
   registerUser,
   getUser,
   updateUser,

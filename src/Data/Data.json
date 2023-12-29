@@ -3,33 +3,36 @@
     {
       "id": 1,
       "urunAdi": "Elbise",
-      "fiyat": 150,
+      "fiyat": 155,
       "renk": "Siyah",
       "kategori": "Kadın",
       "beden": "L",
       "resim": "https://static.ticimax.cloud/10729/uploads/urunresimleri/buyuk/drape-detay-uzun-kol-midi-kadin-elbise-570c02.jpg",
-      "urunaciklama": "Bu siyah elbise, zarif drape detayları ve uzun kollu tasarımıyla öne çıkıyor. Kadın giyim kategorisinde, rahat ve şık bir seçenek olarak öne çıkan bu elbise, L beden seçeneğiyle sunulmaktadır."
+      "urunaciklama": "Bu siyah elbise, zarif drape detayları ve uzun kollu tasarımıyla öne çıkıyor. Kadın giyim kategorisinde, rahat ve şık bir seçenek olarak öne çıkan bu elbise, L beden seçeneğiyle sunulmaktadır.",
+      "marka": "LC WAIKIKI"
     },
     {
       "id": 2,
       "urunAdi": "Çanta",
-      "fiyat": 80,
+      "fiyat": 145,
       "renk": "Beyaz",
       "kategori": "Kadın",
-      "resim": "https://www.im-polo.com/wp-content/uploads/2022/10/impolo-beti-omuz-beyaz-taba-kadin-canta-788.jpg"
+      "resim": "https://www.im-polo.com/wp-content/uploads/2022/10/impolo-beti-omuz-beyaz-taba-kadin-canta-788.jpg",
+      "marka": "ZARA"
     },
     {
       "id": 3,
       "urunAdi": "Ayakkabı",
-      "fiyat": 120,
+      "fiyat": 125,
       "renk": "Kırmızı",
       "kategori": "Kadın",
-      "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg"
+      "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
+      "marka": "NINE WEST"
     },
     {
       "id": 4,
       "urunAdi": "Gözlük",
-      "fiyat": 50,
+      "fiyat": 55,
       "renk": "Mavi",
       "kategori": "Kadın",
       "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg"
@@ -443,67 +446,74 @@
           "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg"
         }
       ],
-      "sepetim": [
+      "sepetim": [],
+      "siparislerim": [
         {
-          "id": 6,
-          "urunAdi": "Gömlek",
-          "fiyat": 80,
-          "renk": "Mavi",
-          "kategori": "Erkek",
-          "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
-          "adet": 2,
-          "toplamFiyat": 160
-        },
-        {
-          "id": 4,
-          "urunAdi": "Gözlük",
-          "fiyat": 50,
-          "renk": "Mavi",
-          "kategori": "Kadın",
-          "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
-          "adet": 1,
-          "toplamFiyat": 50
-        },
-        {
-          "id": 3,
-          "urunAdi": "Ayakkabı",
-          "fiyat": 120,
-          "renk": "Kırmızı",
-          "kategori": "Kadın",
-          "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
-          "adet": 1,
-          "toplamFiyat": 120
-        },
-        {
-          "id": 10,
-          "urunAdi": "Saat",
-          "fiyat": 200,
-          "renk": "Metalik Gri",
-          "kategori": "Erkek",
-          "resim": "https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg",
-          "adet": 1
-        },
-        {
-          "id": 48,
-          "urunAdi": "Gaming Laptop",
-          "fiyat": 1200,
-          "marka": "MSI",
-          "kategori": "CokSatanlar",
-          "resim": "https://www.gaming.gen.tr/wp-content/uploads/2023/03/msi-pulse-15-b13vfk-498tr-intel-core-i7-13700h-32gb-1tb-ssd-rtx4060-15-6-inc-144hz-full-hd-w11-gaming-laptop-y.jpg",
-          "adet": 1,
-          "toplamFiyat": 1200
-        },
-        {
-          "id": 8,
-          "urunAdi": "Ceket",
-          "fiyat": 120,
-          "renk": "Gri",
-          "kategori": "Erkek",
-          "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg",
-          "adet": 1
+          "siparis": {
+            "ürünler": [
+              {
+                "id": 6,
+                "urunAdi": "Gömlek",
+                "fiyat": 80,
+                "renk": "Mavi",
+                "kategori": "Erkek",
+                "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
+                "adet": 2,
+                "toplamFiyat": 160
+              },
+              {
+                "id": 4,
+                "urunAdi": "Gözlük",
+                "fiyat": 50,
+                "renk": "Mavi",
+                "kategori": "Kadın",
+                "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
+                "adet": 1,
+                "toplamFiyat": 50
+              },
+              {
+                "id": 3,
+                "urunAdi": "Ayakkabı",
+                "fiyat": 120,
+                "renk": "Kırmızı",
+                "kategori": "Kadın",
+                "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
+                "adet": 1,
+                "toplamFiyat": 120
+              },
+              {
+                "id": 10,
+                "urunAdi": "Saat",
+                "fiyat": 200,
+                "renk": "Metalik Gri",
+                "kategori": "Erkek",
+                "resim": "https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg",
+                "adet": 1
+              },
+              {
+                "id": 48,
+                "urunAdi": "Gaming Laptop",
+                "fiyat": 1200,
+                "marka": "MSI",
+                "kategori": "CokSatanlar",
+                "resim": "https://www.gaming.gen.tr/wp-content/uploads/2023/03/msi-pulse-15-b13vfk-498tr-intel-core-i7-13700h-32gb-1tb-ssd-rtx4060-15-6-inc-144hz-full-hd-w11-gaming-laptop-y.jpg",
+                "adet": 1,
+                "toplamFiyat": 1200
+              },
+              {
+                "id": 8,
+                "urunAdi": "Ceket",
+                "fiyat": 120,
+                "renk": "Gri",
+                "kategori": "Erkek",
+                "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg",
+                "adet": 1
+              }
+            ],
+            "siparisDurumu": "Beklemede"
+          }
         }
       ],
-      "siparislerim": [],
       "telNo": 5555545555,
       "adres": "adres",
       "status": "Admin",
@@ -720,6 +730,40 @@
                 "renk": "Metalik Gri",
                 "kategori": "Erkek",
                 "resim": "https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg",
+                "adet": 1
+              }
+            ],
+            "siparisDurumu": "Beklemede"
+          }
+        },
+        {
+          "siparis": {
+            "ürünler": [
+              {
+                "id": 5,
+                "urunAdi": "Şort",
+                "fiyat": 100,
+                "renk": "Yeşil",
+                "kategori": "Kadın",
+                "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
+                "adet": 1
+              },
+              {
+                "id": 6,
+                "urunAdi": "Gömlek",
+                "fiyat": 80,
+                "renk": "Mavi",
+                "kategori": "Erkek",
+                "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
+                "adet": 1
+              },
+              {
+                "id": 7,
+                "urunAdi": "Pantolon",
+                "fiyat": 90,
+                "renk": "Siyah",
+                "kategori": "Erkek",
+                "resim": "https://cdn.dsmcdn.com/ty996/product/media/images/prod/SPM/PIM/20230909/20/9c831f8d-668c-3d3b-a2eb-3b9c0680fac5/1_org_zoom.jpg",
                 "adet": 1
               }
             ],

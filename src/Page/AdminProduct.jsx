@@ -1,8 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AdminSideBar from "../Components/AdminSideBar";
 import { useDispatch, useSelector } from "react-redux";
-import { createProduct, deleteProduct, getProduct, getUser, updateProduct } from "../Redux/Action";
+import {
+  createProduct,
+  deleteProduct,
+  getProduct,
+  updateProduct,
+} from "../Redux/Action";
 import { toast } from "react-toastify";
+import { setProductField } from "../Redux/ProductSlice";
 
 const AdminProduct = () => {
   const product = useSelector((state) => state.product);
@@ -77,7 +83,7 @@ const AdminProduct = () => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: "dark",
+          theme: "light",
         });
       } else {
         console.error("silinecek verinin kimliği belirtilmemiş");
@@ -87,28 +93,58 @@ const AdminProduct = () => {
     }
   };
 
-  const [createModal, setCreateModal] = useState(false);
-  const [newData, setNewData] = useState({
-    urunAdi: "",
-    fiyat: "",
-    renk: "",
-    kategori: "",
-    resim: "",
-    urunaciklama: "",
-    marka: "",
-  });
+  const [createModal, setCreateModal] = useState(null);
+  const urunAdiRef = useRef();
+  const fiyatRef = useRef();
+  const renkRef = useRef();
+  const kategoriRef = useRef();
+  const resimRef = useRef();
+  const urunaciklamaRef = useRef();
+  const markaRef = useRef();
   const handleCreateModalOpen = () => {
-    setCreateModal(!createModal);
+    setCreateModal(true);
   };
   const handleCreateModalClose = () => {
-    setCreateModal(!createModal);
+    setCreateModal(null);
   };
 
-  const handleCreateProduct = async () =>{
-    await dispatch(createProduct({
-        newProduct: newData,
-    })).then(() => getUser()).finally(() => handleCreateModalClose())
-  }
+  const handleCreateProduct = async () => {
+   try{
+    const urunAdi = urunAdiRef.current.value;
+    const fiyat = fiyatRef.current.value;
+    const renk = renkRef.current.value;
+    const kategori = kategoriRef.current.value;
+    const resim = resimRef.current.value;
+    const urunaciklama = urunaciklamaRef.current.value;
+    const marka = markaRef.current.value;
+
+    dispatch(setProductField({ field: "urunAdi", value: urunAdi }));
+    dispatch(setProductField({ field: "fiyat", value: fiyat }));
+    dispatch(setProductField({ field: "renk", value: renk }));
+    dispatch(setProductField({ field: "kategori", value: kategori }));
+    dispatch(setProductField({ field: "resim", value: resim }));
+    dispatch(setProductField({ field: "urunaciklama", value: urunaciklama }));
+    dispatch(setProductField({ field: "marka", value: marka }));
+
+    dispatch(
+      createProduct(urunAdi, fiyat, renk, kategori, resim, urunaciklama, marka)
+    ).then(() => dispatch(getProduct()))
+   } catch (error){
+    console.log(error);
+   } finally{
+    setCreateModal(null)
+    toast.success("Ürün Eklendi!", {
+     position: "bottom-right",
+     autoClose: 2000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: true,
+     draggable: true,
+     progress: undefined,
+     theme: "light",
+   })
+   }   
+  };
 
   useEffect(() => {
     dispatch(getProduct());
@@ -194,58 +230,56 @@ const AdminProduct = () => {
             </div>
           </div>
         )}
-        {createModal !== false && (
+        {createModal !== null && (
           <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-30">
             <div className="bg-gray-200 w-80 flex flex-col items-center justify-center rounded shadow-lg shadow-black text-black">
+              <h3>Ürün Kategorisi:</h3>
+              <select  className="bg-gray-100 p-2 rounded-md w-[90%]" ref={kategoriRef} name="kategori" id="kategori">
+                <option value="Kadın">Kadın</option>
+                <option value="Erkek">Erkek</option>
+                <option value="AnneCocuk">AnneCocuk</option>
+                <option value="Evyasam">Evyasam</option>
+                <option value="Supermarket">Supermarket</option>
+                <option value="Kozmetik">Kozmetik</option>
+                <option value="AyakkabiCanta">AyakkabiCanta</option>
+                <option value="Elektronik">Elektronik</option>
+                <option value="SporOutdoor">SporOutdoor</option>
+                <option value="CokSatanlar">CokSatanlar</option>
+              </select>
               <h3>Ürün Adı:</h3>
               <input
+                ref={urunAdiRef}
                 type="text"
-                onChange={(e) =>
-                  setNewData({urunAdi: e.target.value })
-                }
                 className="bg-gray-100 p-2 rounded-md w-[90%]"
               />
               <h3>Ürün Resmi:</h3>
               <input
+                ref={resimRef}
                 type="text"
-                onChange={(e) =>
-                  setNewData({ ...editedData, resim: e.target.value })
-                }
                 className="bg-gray-100 p-2 rounded-md w-[90%]"
               />
               <h3>Ürün Markası:</h3>
               <input
+                ref={markaRef}
                 type="text"
-                onChange={(e) =>
-                  setNewData({ ...editedData, marka: e.target.value })
-                }
                 className="bg-gray-100 p-2 rounded-md w-[90%]"
               />
               <h3>Ürün Rengi:</h3>
               <input
+                ref={renkRef}
                 type="text"
-                onChange={(e) =>
-                  setNewData({ ...editedData, renk: e.target.value })
-                }
                 className="bg-gray-100 p-2 rounded-md w-[90%]"
               />
               <h3>Ürün Açıklaması:</h3>
               <input
+                ref={urunaciklamaRef}
                 type="text"
-                onChange={(e) =>
-                  setNewData({ ...editedData, urunaciklama: e.target.value })
-                }
                 className="bg-gray-100 p-2 rounded-md w-[90%]"
               />
               <h3>Ürün Fiyatı:</h3>
               <input
+                ref={fiyatRef}
                 type="number"
-                onChange={(e) =>
-                  setNewData({
-                    ...editedData,
-                    fiyat: parseFloat(e.target.value),
-                  })
-                }
                 className="bg-gray-100 p-2 rounded-md w-[90%]"
               />
               <div className="my-4">

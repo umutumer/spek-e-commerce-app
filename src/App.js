@@ -13,6 +13,7 @@ import Payment from './Page/Payment';
 import MyOrders from './Page/MyOrders';
 import AdminHome from './Page/AdminHome';
 import AdminProduct from './Page/AdminProduct';
+import AdminOrders from './Page/AdminOrders';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route path='/myorders' element={<MyOrders />} />
       <Route path='/admin' element={<AdminHome />} />
       <Route path='/admin/product' element={<AdminProduct />} />
+      <Route path='/admin/orders' element={<AdminOrders />} />
     </Routes>
     </BrowserRouter>
   );

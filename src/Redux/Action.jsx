@@ -10,7 +10,7 @@ import {
 } from "./UserSlice";
 import { addCart, removeCart, resCart } from "./CartSlice";
 import { addFavorite, delFavorite } from "./FavoriteSlice";
-import { addOrder } from "./OrderSlice";
+import { addOrder, upOrder } from "./OrderSlice";
 
 //Product
 const getProduct = () => async (dispatch) => {
@@ -49,6 +49,7 @@ const createProduct = (urunAdi,fiyat,renk,kategori,resim,urunaciklama,marka) => 
       urunaciklama,
       marka,
     });
+    console.log(response);
     dispatch(setProductField({field:urunAdi, value:urunAdi}))
     dispatch(setProductField({field:fiyat, value:fiyat}))
     dispatch(setProductField({field:renk, value:renk}))
@@ -73,7 +74,7 @@ const updateUser = (userId, newUser) => async (dispatch) => {
   try {
     const response = await axios.patch(
       `http://localhost:3005/users/${userId}`,
-      newUser
+      {status:newUser,}
     );
     dispatch(upUser(response.data));
   } catch (error) {
@@ -345,7 +346,35 @@ const paymentConfirm = (UserId,Cart) => async (dispatch) =>{
   } catch(error){
     console.error("sipariş verilirken bir hata oluştu",error);
   }
-}
+};
+
+// Order
+
+const updateOrderStatus = (selectedUserId, selectedOrderIndex, newStatus) => async (dispatch) => {
+  try {
+    const userResponse = await axios.get(`http://localhost:3005/users/${selectedUserId}`);
+    const currentUser = userResponse.data;
+
+    const existingOrderIndex = currentUser.siparislerim.findIndex(
+      (item) => item.index === selectedOrderIndex
+    );
+ console.log(existingOrderIndex);
+    if (existingOrderIndex !== -1) {
+      const updatedSiparislerim = [...currentUser.siparislerim];
+      updatedSiparislerim[existingOrderIndex].siparisDurumu = newStatus;
+
+      const upOrderStatus = { siparislerim: updatedSiparislerim };
+      const response = await axios.patch(`http://localhost:3005/users/${selectedUserId}`, upOrderStatus);
+
+      dispatch(upOrder(response.data));
+    } else {
+      console.error("Selected order not found.");
+    }
+  } catch (error) {
+    console.error("Error updating order status:", error);
+  }
+};
+
 
 export {
   getProduct,
@@ -366,4 +395,5 @@ export {
   addFavorites,
   deleteFavorites,
   paymentConfirm,
+  updateOrderStatus,
 };

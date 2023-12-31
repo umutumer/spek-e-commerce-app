@@ -7,9 +7,12 @@ const orderSlice = createSlice({
     reducers:{
         addOrder: (state,action) =>{
           return{  ...state, data: action.payload}
+        },
+        upOrder: (state,action) =>{
+          return{  ...state, data: action.payload}
         }
     }
 })
 
-export const {addOrder} = orderSlice.actions;
+export const {addOrder , upOrder} = orderSlice.actions;
 export default orderSlice.reducer;

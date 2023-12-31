@@ -470,22 +470,25 @@
       ],
       "sepetim": [],
       "siparislerim": [
-        {
-          "siparis": {
-            "ürünler": [
-              {
-                "id": 10,
-                "urunAdi": "Saat",
-                "fiyat": 200,
-                "renk": "Metalik Gri",
-                "kategori": "Erkek",
-                "resim": "https://cdn.dsmcdn.com/ty824/product/media/images/20230412/19/323390867/363957186/1/1_org_zoom.jpg",
-                "adet": 1
-              }
-            ],
-            "siparisDurumu": "Beklemede"
+        [
+          {
+            "siparis": {
+              "ürünler": [
+                {
+                  "id": 6,
+                  "urunAdi": "Gömlek",
+                  "fiyat": 80,
+                  "renk": "Mavi",
+                  "kategori": "Erkek",
+                  "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
+                  "marka": "KOTON",
+                  "adet": 1
+                }
+              ],
+              "siparisDurumu": "Beklemede"
+            }
           }
-        }
+        ]
       ],
       "telNo": 5555545555,
       "adres": "adres",
@@ -495,6 +498,7 @@
     {
       "id": 101,
       "kullaniciAdi": "emirhancam",
+      "mail": "emirhancamiletisim@gmail.com",
       "sifre": "password321",
       "favoriler": [],
       "sepetim": [
@@ -512,7 +516,8 @@
       "telNo": 5555555555,
       "adres": "adres",
       "status": "Uye",
-      "isLogin": false
+      "isLogin": false,
+      "Admin": ""
     },
     {
       "kullaniciAdi": "deneme",

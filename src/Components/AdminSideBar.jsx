@@ -5,7 +5,7 @@ import { FaPeopleCarryBox, FaUsers } from "react-icons/fa6";
 
 const AdminSideBar = () => {
   return (
-    <div className="fixed h-screen md:w-72 w-28 flex flex-col items-center bg-orange-500 text-white duration-300">
+    <div className="fixed h-screen md:w-72 w-28 flex flex-col items-center bg-orange-500 text-white duration-300 z-20">
       <Link
         to="/admin"
         className="md:text-3xl text-lg font-semibold w-full text-center my-20"

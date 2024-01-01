@@ -9,13 +9,17 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async  (e) => {
     e.preventDefault();
-    dispatch(login(username, password))
-    .then(() => {
+    try {
+      await dispatch(login(username, password));
+  
       dispatch(getUser());
-    });
-    navigate('/');
+      navigate('/');
+    } catch (error) {
+      console.error("Hata Mesajı:", error.message);
+      alert("Kullanıcı adı veya şifre yanlış.");
+    }
   };
 
   return (

@@ -70,7 +70,7 @@ const Payment = () => {
               ))}
           </div>
           <div>
-            <form className="w-96 h-56 m-2 p-2 bg-gray-100 dark:bg-slate-700">
+            <form onSubmit={() =>handlePaymentConfirm() } className="w-96 m-2 bg-gray-100 dark:bg-slate-700">
               <label className="w-full">Kart Üzerindeki İsim</label> <br />
               <input
                 type="text"
@@ -80,7 +80,12 @@ const Payment = () => {
               <label className="w-full">Kart Numarası</label> <br />
               <input
                 className="dark:bg-slate-800 w-full"
-                type="text" required
+                type="tel"
+                    inputmode="numeric"
+                    pattern="[0-9\s]{13,19}"
+                    autocomplete="cc-number"
+                    maxlength="19"
+                    placeholder="xxxx xxxx xxxx xxxx" required
               />{" "}
               <br />
               <div className="w-full flex justify-between">
@@ -88,7 +93,10 @@ const Payment = () => {
                   <label className="w-full">CVV</label> <br />
                   <input
                     className="dark:bg-slate-800 w-[90%]"
-                    type="text" required
+                    type="password"
+                      maxlength="3"
+                      placeholder="xxx"
+                      required
                   />{" "}
                 </div>
                 <div className="w-[50%]">
@@ -126,12 +134,12 @@ const Payment = () => {
                   </select>
                 </div>
               </div>
-            </form>
-            <div className="w-96 h-56 m-2 p-2 flex flex-col text-center bg-gray-100 dark:bg-slate-700 relative">
+            <div className="w-96 h-56 flex flex-col text-center items-center bg-gray-100 dark:bg-slate-700 relative">
               <p className="text-2xl m-2">Toplam Tutar</p>
               <p className="text-xl m-2">{totalAmount}₺</p>
-              <button onClick={() => handlePaymentConfirm()} className="bg-orange-500 dark:bg-blue-600 py-1 text-white rounded absolute bottom-2 w-[90%] m-2 ">Siparişi Onayla</button>
+              <input type="submit" className="bg-orange-500 dark:bg-blue-600 py-1 text-white rounded absolute bottom-2 w-[90%] m-2 " /> 
             </div>
+            </form>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navigation from "../Components/Navigation";
-import { getUser } from "../Redux/Action";
+import { getUser, updateUser } from "../Redux/Action";
 import { FaCircleUser } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 
@@ -11,12 +11,32 @@ const UserInformation = () => {
   const loggedInUser = Array.isArray(users)
     ? users.find((user) => user.isLogin)
     : null;
+  const userId = loggedInUser && loggedInUser.id;
 
   const [modalVisibilty, setModalVisibility] = useState(false);
-
+  const [editedUser, setEditedUser] = useState({
+    kullaniciAdi: "",
+    mail: "",
+    fiyat: "",
+    telNo: "",
+    adres: "",
+  });
   const handleClickModal = () => {
     setModalVisibility(!modalVisibilty);
+    setEditedUser({
+      kullaniciAdi: loggedInUser.kullaniciAdi,
+      mail: loggedInUser.mail,
+      fiyat: loggedInUser.fiyat,
+      telNo: loggedInUser.telNo,
+      adres: loggedInUser.adres,
+    });
   };
+
+  const handleUpdateUser = () =>{
+    dispatch(updateUser({userId:userId,newUser:editedUser,}))
+  }
+
+ 
 
   useEffect(() => {
     dispatch(getUser());
@@ -92,32 +112,89 @@ const UserInformation = () => {
           </div>
         </div>
         {modalVisibilty === true && (
-              <div className="w-full h-full bg-black bg-opacity-70 absolute  flex items-center justify-center">
-                <div className="relative">
-                <form className="top-30 sm:w-[40rem] w-96 border p-3 z-20 bg-white dark:bg-slate-800 flex flex-col justify-center relative">
-                  <label>Kullanıcı Adı</label>
-                  <input type="text" value={loggedInUser.kullaniciAdi} className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600" /> <br />
-                  <label >E-Posta</label>
-                  <input type="text" value={loggedInUser.mail} className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600" /> <br />
-                  <label>Telefon Numarası</label>
-                  {loggedInUser.telNo ? (
-                    <input type="number" value={loggedInUser.telNo} className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600" />
-                  ):(
-                    <input type="number" className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600"  /> 
-                  )} <br />
-                  <label>Adres</label>
-                  {loggedInUser.adres ?(
-                    <input type="text" value={loggedInUser.adres} className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600" />
-                  ):(
-                    <input type="text" className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600" />
-                  )} <br />
-                  <input type="submit" value={'Güncelle'} className="bg-orange-500 dark:bg-blue-600 text-white p-2" />
-                </form>
-                <button onClick={() => handleClickModal()} className="absolute top-1 right-1 text-xl font-bold text-orange-500 dark:text-blue-600 z-50">X</button>
-                </div>
-                
-              </div>
-            )}
+          <div className="w-full h-full bg-black bg-opacity-70 absolute  flex items-center justify-center">
+            <div className="relative">
+              <form onSubmit={() => handleUpdateUser()} className="top-30 sm:w-[40rem] w-96 border p-3 z-20 bg-white dark:bg-slate-800 flex flex-col justify-center relative">
+                <label>Kullanıcı Adı</label>
+                <input
+                  type="text"
+                  value={editedUser.kullaniciAdi}
+                  onChange={(e) =>
+                    setEditedUser({
+                      ...editedUser,
+                      kullaniciAdi: e.target.value,
+                    })
+                  }
+                  className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600"
+                />{" "}
+                <br />
+                <label>E-Posta</label>
+                <input
+                  type="text"
+                  value={editedUser.mail}
+                  onChange={(e) =>
+                    setEditedUser({ ...editedUser, mail: e.target.value })
+                  }
+                  className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600"
+                />{" "}
+                <br />
+                <label>Telefon Numarası</label>
+                {editedUser.telNo ? (
+                  <input
+                    type="number"
+                    value={editedUser.telNo}
+                    maxLength={10}
+                    onChange={(e) =>
+                      setEditedUser({ ...editedUser, telNo: e.target.value })
+                    }
+                    className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600"
+                  />
+                ) : (
+                  <input
+                    type="number"
+                    maxLength={10}
+                    onChange={(e) =>
+                      setEditedUser({ ...editedUser, telNo: e.target.value })
+                    }
+                    className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600"
+                  />
+                )}{" "}
+                <br />
+                <label>Adres</label>
+                {loggedInUser.adres ? (
+                  <input
+                    type="text"
+                    value={editedUser.adres}
+                    onChange={(e) =>
+                      setEditedUser({ ...editedUser, adres: e.target.value })
+                    }
+                    className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600"
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      setEditedUser({ ...editedUser, adres: e.target.value })
+                    }
+                    className="dark:bg-slate-700 focus:outline-none focus:border-1 focus:border-orange-500 dark:focus:border-blue-600 focus:ring-orange-500 dark:focus:ring-blue-600"
+                  />
+                )}{" "}
+                <br />
+                <input
+                  type="submit"
+                  value={"Güncelle"}
+                  className="bg-orange-500 dark:bg-blue-600 text-white p-2"
+                />
+              </form>
+              <button
+                onClick={() => handleClickModal()}
+                className="absolute top-1 right-1 text-xl font-bold text-orange-500 dark:text-blue-600 z-50"
+              >
+                X
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

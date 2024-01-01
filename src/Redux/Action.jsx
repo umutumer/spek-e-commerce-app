@@ -70,7 +70,15 @@ const getUser = () => async (dispatch) => {
     console.error("Kullanıcılar gelirken hata oluştu:", error);
   }
 };
-const updateUser = (userId, newUser) => async (dispatch) => {
+const updateUser = ({userId, newUser}) => async (dispatch) => {
+  try{
+    const response = await axios.patch(`http://localhost:3005/users/${userId}` , newUser);
+    dispatch(upProduct(response.data));
+  }catch (error) {
+    console.error("Ürün bilgileri güncellenirken hata oluştu:", error);
+  }
+};
+const updateUserStatus = (userId, newUser) => async (dispatch) => {
   try {
     const response = await axios.patch(
       `http://localhost:3005/users/${userId}`,
@@ -137,12 +145,14 @@ const login = (username, password) => async (dispatch) => {
 
       dispatch(loginUser({ userId }));
     } else {
-      console.error("Kullanıcı adı veya şifre yanlış.");
+      throw new Error("Kullanıcı adı veya şifre yanlış.");
     }
   } catch (error) {
     console.error("Bir hata oluştu:", error.message);
+    throw error;
   }
 };
+
 const logout = (userId) => async (dispatch) => {
   try {
     const response = await axios.patch(
@@ -337,7 +347,7 @@ const paymentConfirm = (UserId,Cart) => async (dispatch) =>{
     let addOrderr;
     if (currentUser) {
       addOrderr = {
-        siparislerim: [...currentUser.siparislerim,{siparis:{ürünler:Cart ,siparisDurumu: 'Beklemede'}}],
+        siparislerim: [...currentUser.siparislerim,[{siparis:{ürünler:Cart ,siparisDurumu: 'Beklemede'}}]],
         
       }
     }
@@ -356,12 +366,15 @@ const updateOrderStatus = (selectedUserId, selectedOrderIndex, newStatus) => asy
     const currentUser = userResponse.data;
 
     const existingOrderIndex = currentUser.siparislerim.findIndex(
-      (item) => item.index === selectedOrderIndex
+      (item,index) => index === selectedOrderIndex
     );
  console.log(existingOrderIndex);
+ console.log(selectedOrderIndex);
     if (existingOrderIndex !== -1) {
       const updatedSiparislerim = [...currentUser.siparislerim];
-      updatedSiparislerim[existingOrderIndex].siparisDurumu = newStatus;
+      updatedSiparislerim[existingOrderIndex].map((order) => order.siparis.siparisDurumu = newStatus);
+      const orderStatus = currentUser.siparislerim[existingOrderIndex].map((order) => order.siparis.siparisDurumu = newStatus);
+      console.log(orderStatus);
 
       const upOrderStatus = { siparislerim: updatedSiparislerim };
       const response = await axios.patch(`http://localhost:3005/users/${selectedUserId}`, upOrderStatus);
@@ -384,6 +397,7 @@ export {
   registerUser,
   getUser,
   updateUser,
+  updateUserStatus,
   deleteUser,
   login,
   logout,

@@ -89,8 +89,8 @@ const Cart = () => {
                     />
                   </td>
                   <td>{product.urunAdi}</td>
-                  {product.renk && <td>{product.renk}</td>}
-                  {product.marka && <td>{product.marka}</td>}
+                   <td>{product.renk}&{product.marka}</td>
+
                   <td>
                     {product.adet > 1 ? (
                       <button

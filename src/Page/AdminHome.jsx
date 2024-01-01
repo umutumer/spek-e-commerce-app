@@ -11,7 +11,6 @@ const AdminHome = () => {
     ? users.find((user) => user.isLogin)
     : null;
   const admin = loggedInUser && loggedInUser.status === "Admin";
-  console.log(admin && admin);
 
   useEffect(() => {
     dispatch(getUser());

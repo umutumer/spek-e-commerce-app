@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AdminSideBar from "../Components/AdminSideBar";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser, updateUser } from "../Redux/Action";
+import { getUser, updateUserStatus } from "../Redux/Action";
 
 const AdminUsers = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const AdminUsers = () => {
 console.log(status);
   const handleUpdateUser = () => {
     const newUser = status;
-    dispatch(updateUser(userId, newUser))
+    dispatch(updateUserStatus(userId, newUser))
       .then(() => dispatch(getUser()))
       .then(() => setIsModalOpen(!isModalOpen));
   };

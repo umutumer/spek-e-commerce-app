@@ -3,7 +3,7 @@
     {
       "id": 1,
       "urunAdi": "Elbise",
-      "fiyat": 155,
+      "fiyat": 175,
       "renk": "Siyah",
       "kategori": "Kadın",
       "beden": "L",
@@ -434,40 +434,7 @@
       "kullaniciAdi": "umutumer",
       "mail": "utumer6@gmail.com",
       "sifre": "password123",
-      "favoriler": [
-        {
-          "id": 6,
-          "urunAdi": "Gömlek",
-          "fiyat": 80,
-          "renk": "Mavi",
-          "kategori": "Erkek",
-          "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg"
-        },
-        {
-          "id": 7,
-          "urunAdi": "Pantolon",
-          "fiyat": 90,
-          "renk": "Siyah",
-          "kategori": "Erkek",
-          "resim": "https://cdn.dsmcdn.com/ty996/product/media/images/prod/SPM/PIM/20230909/20/9c831f8d-668c-3d3b-a2eb-3b9c0680fac5/1_org_zoom.jpg"
-        },
-        {
-          "id": 9,
-          "urunAdi": "SweatShirt",
-          "fiyat": 30,
-          "renk": "Kahverengi",
-          "kategori": "Erkek",
-          "resim": "https://img-lcwaikiki.mncdn.com/mnresize/1020/1360/pim/productimages/20232/6896525/v1/l_20232-w3hs46z8-vc8-92-74-89-188_a.jpg"
-        },
-        {
-          "id": 8,
-          "urunAdi": "Ceket",
-          "fiyat": 120,
-          "renk": "Gri",
-          "kategori": "Erkek",
-          "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg"
-        }
-      ],
+      "favoriler": [],
       "sepetim": [],
       "siparislerim": [
         [
@@ -475,22 +442,77 @@
             "siparis": {
               "ürünler": [
                 {
-                  "id": 6,
-                  "urunAdi": "Gömlek",
-                  "fiyat": 80,
+                  "id": 4,
+                  "urunAdi": "Gözlük",
+                  "fiyat": 55,
                   "renk": "Mavi",
-                  "kategori": "Erkek",
-                  "resim": "https://witcdn.lufian.com/pitaya-erkek-keten-gomlek-comfort-fit-mavi-keten-gomlek-lufian-284949-60-B.jpg",
+                  "kategori": "Kadın",
+                  "resim": "https://cdn.julude.com/img/1200/85/rainwalker-kadin-gunes-gozlugu-146-49.jpg",
                   "marka": "KOTON",
                   "adet": 1
                 }
               ],
-              "siparisDurumu": "Beklemede"
+              "siparisDurumu": "İade Edildi"
+            }
+          }
+        ],
+        [
+          {
+            "siparis": {
+              "ürünler": [
+                {
+                  "id": 3,
+                  "urunAdi": "Ayakkabı",
+                  "fiyat": 125,
+                  "renk": "Kırmızı",
+                  "kategori": "Kadın",
+                  "resim": "https://static.ticimax.cloud/54098/uploads/urunresimleri/kadin-kirmizi-saten-topuklu-ayakkabi--44dd-.jpg",
+                  "marka": "NINE WEST",
+                  "adet": 1
+                }
+              ],
+              "siparisDurumu": "Teslim Edildi"
+            }
+          }
+        ],
+        [
+          {
+            "siparis": {
+              "ürünler": [
+                {
+                  "id": 8,
+                  "urunAdi": "Ceket",
+                  "fiyat": 120,
+                  "renk": "Gri",
+                  "kategori": "Erkek",
+                  "resim": "https://witcdn.ramsey.com.tr/10126079-150-casual-ceket-ramsey-309391-15-B.jpg",
+                  "adet": 1
+                }
+              ],
+              "siparisDurumu": "Teslim Edildi"
+            }
+          }
+        ],
+        [
+          {
+            "siparis": {
+              "ürünler": [
+                {
+                  "id": 7,
+                  "urunAdi": "Pantolon",
+                  "fiyat": 90,
+                  "renk": "Siyah",
+                  "kategori": "Erkek",
+                  "resim": "https://cdn.dsmcdn.com/ty996/product/media/images/prod/SPM/PIM/20230909/20/9c831f8d-668c-3d3b-a2eb-3b9c0680fac5/1_org_zoom.jpg",
+                  "adet": 1
+                }
+              ],
+              "siparisDurumu": "Teslim Edildi"
             }
           }
         ]
       ],
-      "telNo": 5555545555,
+      "telNo": "5555545556",
       "adres": "adres",
       "status": "Admin",
       "isLogin": true
@@ -549,7 +571,26 @@
           "resim": "https://cdn.karaca.com/image/cdndata/182/202209/600.15.01.2574/8699343501156-4.jpg"
         }
       ],
-      "siparislerim": [],
+      "siparislerim": [
+        [
+          {
+            "siparis": {
+              "ürünler": [
+                {
+                  "id": 5,
+                  "urunAdi": "Şort",
+                  "fiyat": 100,
+                  "renk": "Yeşil",
+                  "kategori": "Kadın",
+                  "resim": "https://static.ticimax.cloud/44236/uploads/urunresimleri/buyuk/yesil-kadin-sort-e00005.jpg",
+                  "adet": 1
+                }
+              ],
+              "siparisDurumu": "Teslim Edildi"
+            }
+          }
+        ]
+      ],
       "telNo": 5123123131,
       "adres": "deneme adres",
       "sifre": "pass1234",

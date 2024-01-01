@@ -1,37 +1,72 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navigation from "../Components/Navigation";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../Redux/Action";
 
 const MyOrders = () => {
+  const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   const loggedInUser = Array.isArray(users)
     ? users.find((user) => user.isLogin)
     : null;
-  const myOrderList = loggedInUser && loggedInUser.siparislerim;
-  console.log(myOrderList && myOrderList);
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+
   return (
     <div className="bg-white text-black dark:bg-slate-800 dark:text-white min-h-screen w-full h-full">
       <Navigation />
-      <div className="w-full h-full mt-5">
+      <div className="w-full h-full mt-5 flex flex-col items-center">
         <h2 className="text-center w-full text-3xl">Siparişlerim</h2>
-        {myOrderList && myOrderList.map((order, index) => (
-          <div key={index} className="relavite w-full">
-            <p className="absolute right-5 bg-orange-500 dark:bg-blue-600 text-white m-2 py-1 px-2 rounded">Sipariş Durumu: {order.siparis.siparisDurumu}</p>
-            <div className="m-5 border dark:border-slate-600">
-              {order.siparis.ürünler.map((product) => (
-                <div key={product.id} className="flex items-center justify-between w-full bg-gray-100 dark:bg-slate-700">
-                  <img src={product.resim} alt={product.urunAdi} className="w-20 h-32 m-1" />
-                  <p>{product.urunAdi}</p>
-                  {product.toplamFiyat ? <p>ToplamFiyat: {product.toplamFiyat}₺</p>:<p>Fiyat: {product.fiyat}₺</p>}
-                  {product.renk && <p>Renk: {product.renk}</p>}
-                  {product.marka && <p>Marka: {product.marka}</p>}
-                  {product.beden && <p>Renk: {product.beden}</p>}
-                  <p className="mr-1">Adet: {product.adet}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+        {loggedInUser &&
+          loggedInUser.siparislerim &&
+          Array.isArray(loggedInUser.siparislerim) &&
+          loggedInUser.siparislerim
+            .slice()
+            .reverse()
+            .map((order, orderIndex) => (
+              <div
+                key={orderIndex}
+                className="w-[90%] h-56 flex items-center justify-between border mt-5 relative dark:border-slate-600 dark:bg-slate-700"
+              >
+                {order
+                  .slice()
+                  .reverse()
+                  .map((orderItem, orderItemIndex) => (
+                    <div
+                      key={`${orderIndex}-${orderItemIndex}`}
+                      className="w-full h-full flex items-center justify-between relative dark:border-slate-600 dark:bg-slate-700"
+                    >
+                      <img
+                        src={orderItem.siparis.ürünler[orderItemIndex].resim}
+                        alt={orderItem.siparis.ürünler[orderItemIndex].urunAdi}
+                        className="w-32 h-full"
+                      />
+                      <p>
+                        Ürün Adı:{" "}
+                        {
+                          orderItem.siparis.ürünler[orderItemIndex].urunAdi
+                        }
+                      </p>
+                      <p>
+                        Adet:{" "}
+                        {orderItem.siparis.ürünler[orderItemIndex].adet}
+                      </p>
+                      <p className="mr-5">
+                        Fiyat:{" "}
+                        {orderItem.siparis.ürünler[orderItemIndex].toplamFiyat
+                          ? orderItem.siparis.ürünler[orderItemIndex].toplamFiyat
+                          : orderItem.siparis.ürünler[orderItemIndex].fiyat}
+                        ₺
+                      </p>
+                      <div className="absolute right-2 top-2 px-2 py-1 bg-orange-500 dark:bg-blue-600 text-white rounded">
+                        <p>Sipariş Durumu: {orderItem.siparis.siparisDurumu}</p>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            ))}
       </div>
     </div>
   );
